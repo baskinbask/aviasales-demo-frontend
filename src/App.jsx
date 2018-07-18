@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-flexbox-grid";
+import "./App.css";
 import styled from "styled-components";
 import Header from "./Header";
 
