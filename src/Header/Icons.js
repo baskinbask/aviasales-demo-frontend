@@ -33,25 +33,26 @@ const Dropdown = IconStyled.extend`
 `;
 
 const Plane = IconStyled.extend`
-  top: 23px;
-  right: 25px;
+  top: 22px;
+  right: 20px;
   width: 25px;
+  height: 22px;
   background: url(${PlaneIcon}) no-repeat;
 `;
 
 class Icon extends Component {
   render() {
     switch (this.props.name) {
-      case "Arrow":
+      case "arrow":
         return <Arrow />;
         break;
-      case "Calendar":
+      case "calendar":
         return <Calendar />;
         break;
-      case "Dropdown":
+      case "dropdown":
         return <Dropdown />;
         break;
-      case "Plane":
+      case "plane":
         return <Plane />;
         break;
       default:

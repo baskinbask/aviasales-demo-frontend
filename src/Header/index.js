@@ -46,19 +46,19 @@ const SubTitle = styled.h2`
   color: #ffffff;
 `;
 
-class Header extends Component {
+class Header extends React.Component {
   render() {
     return (
       <WrapperBg>
         <Grid>
           <Logo />
           <Content>
-            <Row center="xs" middle="xs">
-              <Col xs={6}>
+            <Row center="xl" middle="xl">
+              <Col xl={6}>
                 <Title>Поиск дешевых авиабилетов</Title>
                 <SubTitle>Лучший способ купить авиабилеты дешево</SubTitle>
               </Col>
-              <Col xs={10}>
+              <Col xl={10}>
                 <FilterForm />
               </Col>
             </Row>

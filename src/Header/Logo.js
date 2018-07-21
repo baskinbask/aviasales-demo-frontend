@@ -20,11 +20,11 @@ const LogoStyled = styled.div`
   }
 `;
 
-class Logo extends Component {
+class Logo extends React.Component {
   render() {
     return (
       <LogoStyled>
-        <img src={logo} alt={logo} />
+        <img src={logo} alt="Logo" />
         <span>Aviasales</span>
       </LogoStyled>
     );
