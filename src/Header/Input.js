@@ -20,6 +20,40 @@ const LabelTag = styled.label`
   &[for="dateTo"] {
     flex-basis: 17%;
   }
+
+  @media (max-width: 992px) {
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+
+    &[for="departure"],
+    &[for="arrival"],
+    &[for="amount"] {
+      flex-basis: 49%;
+    }
+
+    &[for="dateFrom"],
+    &[for="dateTo"] {
+      flex-basis: 24.35%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &:not(:nth-child(3)) {
+      margin-right: 0;
+    }
+
+    &[for="departure"],
+    &[for="arrival"],
+    &[for="amount"] {
+      flex-basis: 100%;
+    }
+
+    &[for="dateFrom"],
+    &[for="dateTo"] {
+      flex-basis: 49.6%;
+    }
+  }
 `;
 
 const CityCode = styled.span`
@@ -46,6 +80,47 @@ const InputTag = styled.input`
 
   &#amount {
     border-radius: 0 4px 4px 0;
+  }
+
+  @media (max-width: 992px) {
+    &#departure {
+      border-radius: 4px 0 0 0;
+      margin-bottom: 2px;
+    }
+
+    &#arrival {
+      border-radius: 0 4px 0 0;
+      margin-bottom: 2px;
+    }
+
+    &#dateFrom {
+      border-radius: 0 0 0 4px;
+    }
+
+    &#amount {
+      border-radius: 0 0 4px 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &#departure {
+      border-radius: 4px 4px 0 0;
+      margin-bottom: 2px;
+    }
+
+    &#arrival,
+    &#dateFrom {
+      border-radius: 0;
+    }
+
+    &#dateFrom,
+    &#dateTo {
+      margin-bottom: 2px;
+    }
+
+    &#amount {
+      border-radius: 0 0 4px 4px;
+    }
   }
 `;
 

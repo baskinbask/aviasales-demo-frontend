@@ -3,18 +3,26 @@ import styled from "styled-components";
 import Icon from "./Icons";
 
 const Wrapper = styled.div`
-  max-width: 75px;
-  mtext-align: center;
-  border-bottom: ${props => (props.active ? "1px solid #00ace2;" : "none;")};
+  flex-basis: 13%;
+
+  @media (max-width: 576px) {
+    flex-basis: 27%;
+    margin-bottom: 30px;
+  }
 `;
 
 const Title = styled.p`
+  max-width: 70px;
   margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 20px;
   font-size: 12px;
   text-align: center;
   color: ${props => (props.active ? "#000;" : "#00ace2;")};
+  border-bottom: ${props => (props.active ? "1px solid #00ace2;" : "none;")};
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const catProps = [

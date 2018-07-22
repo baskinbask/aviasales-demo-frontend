@@ -18,6 +18,12 @@ const LogoStyled = styled.div`
   & img {
     margin-right: 10px;
   }
+
+  @media (max-width: 576px) {
+    & span {
+      display: none;
+    }
+  }
 `;
 
 class Logo extends React.Component {

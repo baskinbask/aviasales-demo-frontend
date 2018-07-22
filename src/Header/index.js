@@ -6,8 +6,7 @@ import Logo from "./Logo";
 import FilterForm from "./FilterForm";
 
 const WrapperBg = styled.div`
-  width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(
     119.26deg,
     #00b0de -25.78%,
@@ -20,10 +19,15 @@ const WrapperBg = styled.div`
 `;
 
 const Content = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  padding: 254px 0;
+
+  @media (max-width: 992px) {
+    padding: 112px 0;
+  }
+
+  @media (max-width: 576px) {
+    padding: 88px 0;
+  }
 `;
 
 const Title = styled.h1`
@@ -34,6 +38,14 @@ const Title = styled.h1`
   font-size: 39px;
   text-align: center;
   color: #ffffff;
+
+  @media (max-width: 992px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -44,6 +56,14 @@ const SubTitle = styled.h2`
   font-size: 24px;
   text-align: center;
   color: #ffffff;
+
+  @media (max-width: 992px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 `;
 
 class Header extends React.Component {
@@ -53,12 +73,12 @@ class Header extends React.Component {
         <Grid>
           <Logo />
           <Content>
-            <Row center="xl" middle="xl">
+            <Row center="xs" middle="xs">
               <Col xl={6}>
                 <Title>Поиск дешевых авиабилетов</Title>
                 <SubTitle>Лучший способ купить авиабилеты дешево</SubTitle>
               </Col>
-              <Col xl={10}>
+              <Col md={10}>
                 <FilterForm />
               </Col>
             </Row>

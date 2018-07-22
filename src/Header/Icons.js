@@ -38,6 +38,12 @@ const Plane = IconStyled.extend`
   width: 25px;
   height: 22px;
   background: url(${PlaneIcon}) no-repeat;
+
+  @media (max-width: 576px) {
+    top: 18px;
+    right: 50%;
+    transform: translateX(100px);
+  }
 `;
 
 class Icon extends Component {

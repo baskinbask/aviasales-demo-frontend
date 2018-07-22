@@ -25,6 +25,11 @@ const ButtonTag = styled.button`
     box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
     border: none;
   }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    font-size: 20px;
+  }
 `;
 
 class Button extends React.Component {
