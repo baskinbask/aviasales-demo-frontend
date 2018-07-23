@@ -1,3 +1,18 @@
-.App {
-  font-family: Roboto;
+.container {
+  position: relative;
+}
+
+.top-destinations_cards {
+  margin-top: 60px;
+}
+@media (max-width: 576px) {
+  .top-destinations_cards {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-flag {
+    display: none;
+  }
 }
