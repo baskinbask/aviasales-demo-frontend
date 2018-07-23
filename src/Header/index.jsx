@@ -7,7 +7,7 @@ import logo from "../assets/logo.svg";
 const Logo = styled.div`
   padding: 10px;
   color: #fff;
-  text-transfornm: lowercase;
+  text-transform: lowercase;
 `;
 
 const Title = styled.h1`
@@ -30,14 +30,16 @@ const SubTitle = styled.h2`
 class Header extends Component {
   render() {
     return (
-      <Row>
-        <Col>
-          <Logo>
-            <img src="{logo}" alt="{logo}" />
-            Aviasales
-          </Logo>
-        </Col>
-      </Row>
+      <Grid>
+        <Row>
+          <Col>
+            <Logo>
+              <img src={logo} alt={logo} />
+              Aviasales
+            </Logo>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
