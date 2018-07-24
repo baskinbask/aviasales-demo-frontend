@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import globeIcon from "./img/icons/globe.svg";
-import treeIcon from "./img/icons/tree.svg";
-import bagIcon from "./img/icons/bag.svg";
-import cultureIcon from "./img/icons/culture.svg";
-import drinkIcon from "./img/icons/drink.svg";
-import babyIcon from "./img/icons/baby.svg";
+import globeIcon from "./icons/globe.svg";
+import treeIcon from "./icons/tree.svg";
+import bagIcon from "./icons/bag.svg";
+import cultureIcon from "./icons/culture.svg";
+import drinkIcon from "./icons/drink.svg";
+import babyIcon from "./icons/baby.svg";
 
 const IconStyled = styled.div`
   width: 48px;

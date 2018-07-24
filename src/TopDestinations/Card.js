@@ -62,12 +62,14 @@ class Card extends React.Component {
       <CardWrap>
         <picture>
           <source
-            srcSet={`${this.props.photoTab}, ${this.props.photoTab2x} 2x`}
+            srcSet={`${process.env.PUBLIC_URL}${this.props.photoTab}, ${
+              process.env.PUBLIC_URL
+            }${this.props.photoTab2x} 2x`}
             media="(max-width: 992px) and (min-width: 576px)"
           />
           <img
-            srcSet={`${this.props.photo2x} 2x`}
-            src={this.props.photo}
+            srcSet={`${process.env.PUBLIC_URL}${this.props.photo2x} 2x`}
+            src={`${process.env.PUBLIC_URL}${this.props.photo}`}
             alt={this.props.city}
           />
         </picture>

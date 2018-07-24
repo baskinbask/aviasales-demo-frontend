@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import logo from "./img/logo.svg";
+import logo from "./icons/logo.svg";
 
 const LogoStyled = styled.div`
   position: absolute;

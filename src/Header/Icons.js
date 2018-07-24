@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import ArrowIcon from "./img/arrow.svg";
-import CalendarIcon from "./img/calendar.svg";
-import DropdownIcon from "./img/drop.svg";
-import PlaneIcon from "./img/aero.svg";
+import ArrowIcon from "./icons/arrow.svg";
+import CalendarIcon from "./icons/calendar.svg";
+import DropdownIcon from "./icons/drop.svg";
+import PlaneIcon from "./icons/aero.svg";
 
 const IconStyled = styled.div`
   position: absolute;

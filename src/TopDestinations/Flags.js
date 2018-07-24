@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import ruFlag from "./img/flags/flag_ru.png";
-import esFlag from "./img/flags/flag_es.png";
-import mdFlag from "./img/flags/flag_md.png";
-import amFlag from "./img/flags/flag_am.png";
+import ruFlag from "./flags/flag_ru.png";
+import esFlag from "./flags/flag_es.png";
+import mdFlag from "./flags/flag_md.png";
+import amFlag from "./flags/flag_am.png";
 
 function Flag(props) {
   let img;
