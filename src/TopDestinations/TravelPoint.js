@@ -33,7 +33,7 @@ class TravelPoint extends React.Component {
   render() {
     return (
       <GeoWrap>
-        <Flag flagClass={this.props.flagClass} name={this.props.country} />
+        <Flag className={this.props.flagClass} name={this.props.country} />
         <div>
           <Title>{this.props.city}</Title>
           <Subtitle>{this.props.country}</Subtitle>

@@ -78,10 +78,11 @@ class TopDestinations extends React.Component {
                 d="flex"
                 wrap="wrap"
                 jc="space-between"
+                mb="60px"
               >
-                {catProps.map(item => (
+                {catProps.map((item, index) => (
                   <Category
-                    key={item.id}
+                    key={item.index}
                     icon={item.icon}
                     title={item.title}
                     active={item.active}
@@ -97,9 +98,9 @@ class TopDestinations extends React.Component {
                 d="flex"
                 wrap="wrap"
               >
-                {cards.map(card => (
+                {cards.map((card, index) => (
                   <Card
-                    key={card.id}
+                    key={card.index}
                     country={card.country}
                     city={card.city}
                     photo={card.photo[0]}

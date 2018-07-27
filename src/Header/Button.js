@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-// import PlaneIcon from "./img/aero.svg";
 import Icon from "./Icons";
 
 const ButtonTag = styled.button`

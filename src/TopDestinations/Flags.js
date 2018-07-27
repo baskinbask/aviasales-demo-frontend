@@ -26,7 +26,7 @@ function Flag(props) {
       img = true;
   }
 
-  return <div className={props.flagClass}>{img}</div>;
+  return <div className={props.className}>{img}</div>;
 }
 
 export default Flag;

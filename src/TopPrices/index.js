@@ -9,8 +9,16 @@ import { listFrom } from "../common/listFrom";
 
 const WrapperBg = styled.div`
   padding-top: 32px;
-  padding-bottom: 14px;
-  background: #f8fcff;
+  padding-bottom: 75px;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 252, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  @media (max-width: 576px) {
+    padding-bottom: 0;
+  }
 `;
 
 const IconStyled = styled.div`
@@ -43,15 +51,27 @@ const Title = styled.h3`
 `;
 
 const BlockWrap = styled.div`
-  flex: 1 26%;
-  padding: 0 33px;
+  flex: 1 25%;
 
   &:not(:last-child) {
     border-right: 1px dashed #afbec6;
+    padding-right: 33px;
+  }
+
+  &:not(:first-child) {
+    padding-left: 33px;
   }
 
   @media (max-width: 1200px) {
+    flex-basis: 35%;
+
+    &:nth-child(2) {
+      padding-right: 0;
+      border-right: none;
+    }
+
     &:last-child {
+      padding: 0;
       margin-top: 30px;
     }
   }
@@ -63,6 +83,11 @@ const BlockWrap = styled.div`
     &:not(:last-child) {
       border-right: none;
       border-bottom: 1px dashed #afbec6;
+      padding-right: 0;
+    }
+
+    &:nth-child(2) {
+      padding-left: 0;
     }
   }
 `;
@@ -102,10 +127,10 @@ class TopPrices extends React.Component {
           <Row center="xs">
             <Col lg={10} xs={12}>
               <FlexWrapper d="flex" jc="space-between" wrap="wrap">
-                {listFrom.map(item => (
+                {listFrom.map((item, index) => (
                   <BlockWrap>
                     <TravelPoint country={item.country} city={item.city} />
-                    <List key={item.id} away={item.away} />
+                    <List key={item.index} away={item.away} />
                   </BlockWrap>
                 ))}
               </FlexWrapper>
