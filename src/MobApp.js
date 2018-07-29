@@ -21,6 +21,10 @@ const Iphone = styled.picture`
   bottom: 0;
   left: 0;
   z-index: 1;
+
+  & img {
+    display: inherit;
+  }
 `;
 
 const Title = styled.h2`

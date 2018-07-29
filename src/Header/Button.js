@@ -6,7 +6,9 @@ import Icon from "./Icons";
 const ButtonTag = styled.button`
   position: relative;
   margin-top: 48px;
-  padding: ${props => (props.icon ? "15px 75px 15px 45px;" : "15px;")};
+  margin-left: auto;
+  margin-right: auto;
+  padding: ${props => (props.icon ? "15px 75px 15px 45px;" : "15px 29px;")};
   background: #ff9241;
   border: none;
   border-radius: 4px;
@@ -34,7 +36,11 @@ const ButtonTag = styled.button`
 class Button extends React.Component {
   render() {
     return (
-      <ButtonTag type={this.props.type} icon={this.props.icon}>
+      <ButtonTag
+        className={this.props.className}
+        type={this.props.type}
+        icon={this.props.icon}
+      >
         {this.props.value}
         {this.props.icon && <Icon name={this.props.icon} />}
       </ButtonTag>
@@ -43,3 +49,4 @@ class Button extends React.Component {
 }
 
 export default Button;
+export { ButtonTag };

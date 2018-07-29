@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import MediaQuery from "react-responsive";
 import styled from "styled-components";
 
 import logo from "./icons/logo.svg";
@@ -11,18 +13,16 @@ const LogoStyled = styled.div`
   align-items: center;
   padding-top: 12px;
   padding-left: 8px;
-  font-size: 20px;
-  color: #fff;
-  text-transform: lowercase;
 
   & img {
     margin-right: 10px;
   }
 
-  @media (max-width: 576px) {
-    & span {
-      display: none;
-    }
+  & a {
+    font-size: 20px;
+    color: #fff;
+    text-transform: lowercase;
+    text-decoration: none;
   }
 `;
 
@@ -31,7 +31,9 @@ class Logo extends React.Component {
     return (
       <LogoStyled>
         <img src={logo} alt="Logo" />
-        <span>Aviasales</span>
+        <MediaQuery minWidth={577}>
+          <Link to="/">Aviasales</Link>
+        </MediaQuery>
       </LogoStyled>
     );
   }

@@ -7,11 +7,15 @@ const FlexWrapper = styled.div`
   align-items: ${props => props.ai};
   flex-direction: ${props => props.dir};
   flex-wrap: ${props => props.wrap};
-  order: ${props => props.order || 0};
-  margin-top: ${props => props.mt || 0};
-  margin-bottom: ${props => props.mb || 0};
-  margin-left: ${props => props.ml || 0};
-  margin-right: ${props => props.mr || 0};
+  order: ${props => props.order};
+  margin-top: ${props => props.mt};
+  margin-bottom: ${props => props.mb};
+  margin-left: ${props => props.ml};
+  margin-right: ${props => props.mr};
+  padding-top: ${props => props.pt};
+  padding-bottom: ${props => props.pb};
+  padding-left: ${props => props.pl};
+  padding-right: ${props => props.pr};
 `;
 
 export default FlexWrapper;

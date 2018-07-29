@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
@@ -19,7 +20,7 @@ const Title = styled.h2`
   color: #ffffff;
 `;
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   flex-basis: 50%
   text-align: left;
   text-decoration-line: underline;
@@ -68,7 +69,9 @@ class SpecialPrices extends React.Component {
                   ))}
                 </FlexWrapper>
                 <FlexWrapper jc="space-between" mt="25px" wrap="wrap">
-                  <Link href="#">Смотреть все спецпредложения</Link>
+                  <StyledLink to="/search">
+                    Смотреть все спецпредложения
+                  </StyledLink>
                   <span>*средняя цена по направлению</span>
                 </FlexWrapper>
               </Col>

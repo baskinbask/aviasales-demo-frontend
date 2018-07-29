@@ -5,14 +5,12 @@ import Icon from "./Icons";
 
 const LabelTag = styled.label`
   position: relative;
-
-  &:not(:last-child) {
+  ${"" /* flex: 1; */} &:not(:last-child) {
     margin-right: 2px;
   }
 
   &[for="departure"],
-  &[for="arrival"],
-  &[for="amount"] {
+  &[for="arrival"] {
     flex-basis: 21.5%;
   }
 
@@ -27,14 +25,13 @@ const LabelTag = styled.label`
     }
 
     &[for="departure"],
-    &[for="arrival"],
-    &[for="amount"] {
-      flex-basis: 49%;
+    &[for="arrival"] {
+      flex-basis: 49.5%;
     }
 
     &[for="dateFrom"],
     &[for="dateTo"] {
-      flex-basis: 24.35%;
+      flex-basis: 24.6%;
     }
   }
 
@@ -44,8 +41,7 @@ const LabelTag = styled.label`
     }
 
     &[for="departure"],
-    &[for="arrival"],
-    &[for="amount"] {
+    &[for="arrival"] {
       flex-basis: 100%;
     }
 
@@ -78,10 +74,6 @@ const InputTag = styled.input`
     border-radius: 4px 0 0 4px;
   }
 
-  &#amount {
-    border-radius: 0 4px 4px 0;
-  }
-
   @media (max-width: 992px) {
     &#departure {
       border-radius: 4px 0 0 0;
@@ -95,10 +87,6 @@ const InputTag = styled.input`
 
     &#dateFrom {
       border-radius: 0 0 0 4px;
-    }
-
-    &#amount {
-      border-radius: 0 0 4px 0;
     }
   }
 
@@ -117,22 +105,21 @@ const InputTag = styled.input`
     &#dateTo {
       margin-bottom: 2px;
     }
-
-    &#amount {
-      border-radius: 0 0 4px 4px;
-    }
   }
 `;
 
 class Input extends React.Component {
   render() {
     return (
-      <LabelTag htmlFor={this.props.id}>
+      <LabelTag className={this.props.className} htmlFor={this.props.id}>
         <InputTag
           id={this.props.id}
+          className={this.props.className}
+          name={this.props.id}
           type={this.props.type}
           placeholder={this.props.placeholder}
           value={this.props.value}
+          name={this.props.name}
           required
         />
         {this.props.city && <CityCode>{this.props.city}</CityCode>}
