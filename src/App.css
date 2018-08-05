@@ -108,6 +108,15 @@ button.search__header_btn:hover {
   box-shadow: none;
 }
 
+.search__card_flight {
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.search__card_flight + .search__card_flight {
+  border-top: 1px dotted #ddd;
+}
+
 @media (max-width: 992px) {
   .search__header_wrapper {
     flex-wrap: wrap;

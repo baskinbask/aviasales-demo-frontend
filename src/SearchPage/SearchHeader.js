@@ -31,6 +31,7 @@ class SearchHeader extends React.Component {
       <WrapperBg>
         <Grid>
           <Logo />
+          <Row />
           <MediaQuery minWidth={577}>
             <Row>
               <FlexWrapper className="search__header_wrapper">
