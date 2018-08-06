@@ -5,7 +5,7 @@ import FlexWrapper from "../common/FlexWrapper";
 import mainIcon from "./mainIcon.svg";
 import TravelPoint, { GeoWrap } from "../TopDestinations/TravelPoint";
 import List from "./List";
-import { listFrom } from "../common/listFrom";
+import { listFrom } from "./listFrom";
 
 const WrapperBg = styled.div`
   padding-top: 32px;

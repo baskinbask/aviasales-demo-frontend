@@ -28,7 +28,7 @@ class List extends React.Component {
     return (
       <ListWrap>
         {this.props.away.map(item => (
-          <ListItem key={this.props.key}>
+          <ListItem>
             Из {item.from}
             <span>от {item.price} ₽</span>
           </ListItem>

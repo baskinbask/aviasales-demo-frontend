@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import Icon from "./Icons";
@@ -15,6 +16,7 @@ const ButtonTag = styled.button`
   font-size: 28px;
   font-weight: bold;
   color: #fff;
+  text-decoration: none
   cursor: pointer;
   transition: all 0.5s ease;
 

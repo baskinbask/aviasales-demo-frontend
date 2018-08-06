@@ -55,8 +55,14 @@ const ListItem = styled.li`
     line-height: 16px;
     font-size: 12px;
 
-    & span {
-      text-transform: lowercase;
+    & a {
+      font-size: 12px;
+      color: #5b5b5c;
+      text-decoration: none;
+
+      & span {
+        text-transform: lowercase;
+      }
     }
   }
 `;
@@ -171,7 +177,9 @@ export default function Footer(props) {
             <Title>{list.title}</Title>
             {list.items.map(item => <ListItem>{item}</ListItem>)}
             <ListItem>
-              Все <span>{list.title}</span> &#10141;
+              <a href="#">
+                Все <span>{list.title} &#10141;</span>
+              </a>
             </ListItem>
           </List>
         ))}

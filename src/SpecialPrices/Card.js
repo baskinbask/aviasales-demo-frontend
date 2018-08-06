@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
-import headerIcon from "./icons/headerIcon.png";
+// import headerIcon from "./icons/headerIcon.png";
 
 const CardWrapper = styled.div`
   display: flex;
@@ -77,6 +76,7 @@ const Btn = styled.button`
   border: 2px solid #cd1f27;
   border-radius: 3px;
   background: #fff;
+  cursor: pointer;
 `;
 
 const Price = styled.p`
@@ -129,7 +129,7 @@ class Card extends React.Component {
             Из Москвы в США от {this.props.price} рублей! Специальное
             предложение от авиакомпании {this.props.air}
           </Content>
-          <Btn>Узнать подробности</Btn>
+          <Btn type="button">Узнать подробности</Btn>
         </ContentWrap>
       </CardWrapper>
     );

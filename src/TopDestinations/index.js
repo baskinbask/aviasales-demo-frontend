@@ -6,7 +6,7 @@ import mainIcon from "./icons/mainIcon.svg";
 import editIcon from "./icons/edit.svg";
 import { catProps } from "./Category";
 import Category from "./Category";
-import { cards } from "../common/cardsArr";
+import { cards } from "./cardsArr";
 import Card from "./Card";
 
 const WrapperBg = styled.div`
@@ -80,14 +80,7 @@ class TopDestinations extends React.Component {
                 jc="space-between"
                 mb="60px"
               >
-                {catProps.map((item, index) => (
-                  <Category
-                    key={item.index}
-                    icon={item.icon}
-                    title={item.title}
-                    active={item.active}
-                  />
-                ))}
+                {catProps.map((item, index) => <Category {...item} />)}
               </FlexWrapper>
             </Col>
           </Row>
@@ -98,19 +91,7 @@ class TopDestinations extends React.Component {
                 d="flex"
                 wrap="wrap"
               >
-                {cards.map((card, index) => (
-                  <Card
-                    key={card.index}
-                    country={card.country}
-                    city={card.city}
-                    photo={card.photo[0]}
-                    photo2x={card.photo[1]}
-                    photoTab={card.photo[2]}
-                    photoTab2x={card.photo[3]}
-                    price={card.price}
-                    date={card.date}
-                  />
-                ))}
+                {cards.map((card, index) => <Card {...card} />)}
               </FlexWrapper>
             </Col>
           </Row>

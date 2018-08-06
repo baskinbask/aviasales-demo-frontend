@@ -4,6 +4,7 @@ import MediaQuery from "react-responsive";
 import FlexWrapper from "../common/FlexWrapper";
 
 import FlightAttrs from "./FlightAttrs";
+import AirLogo from "./AirLogo";
 import carryOn from "./icons/laggageS.svg";
 import laggage from "./icons/laggageL.svg";
 import rusAir from "./icons/rus.png";
@@ -103,8 +104,6 @@ const PlaceToBuy = styled.p`
   text-align: center;
   color: #a0b0b9;
 `;
-
-const AirLogo = styled.img``;
 
 const CharterPic = styled.div`
   position: relative;
@@ -230,7 +229,14 @@ class Card extends React.Component {
         </LeftCol>
         <RightCol>
           <FlexWrapper jc="space-between" ai="flex-start">
-            <AirLogo src={rusAir} srcSet={`${rusAir2x} 2x`} />
+            {this.props.departure.airline && this.props.arrival.airline ? (
+              <div>
+                <AirLogo airline={this.props.departure.airline} />
+                <AirLogo airline={this.props.arrival.airline} />
+              </div>
+            ) : (
+              <AirLogo airline={this.props.departure.airline} />
+            )}
             {this.props.charter && <CharterPic>чартер</CharterPic>}
           </FlexWrapper>
           <FlexWrapper className="search__card_flight">
@@ -251,7 +257,7 @@ class Card extends React.Component {
             <FlightAttrs departure={this.props.departure} return />
             <FlightDurWrap>
               <FlightDuration>
-                Всего: {this.props.departure.durFrom}
+                Всего: {this.props.arrival.durFrom}
               </FlightDuration>
               <FlightDurGraph />
               <FlexWrapper jc="space-between">
