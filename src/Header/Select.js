@@ -6,13 +6,10 @@ import styled from "styled-components";
 // `;
 
 const SelectTag = styled.select`
-  flex-basis: 21.5%;
-  padding: 16px 10px;
+  ${"" /* flex-basis: 21%; */} padding: 16px 10px;
   box-sizing: border-box;
   border: none;
   border-radius: 0 4px 4px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
 
   @media (max-width: 992px) {
     border-radius: 0 0 4px 0;

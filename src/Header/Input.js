@@ -5,18 +5,31 @@ import Icon from "./Icons";
 
 const LabelTag = styled.label`
   position: relative;
-  ${"" /* flex: 1; */} &:not(:last-child) {
+
+  &:not(:last-child) {
     margin-right: 2px;
   }
 
   &[for="departure"],
   &[for="arrival"] {
-    flex-basis: 21.5%;
+    flex-basis: 22%;
   }
 
   &[for="dateFrom"],
   &[for="dateTo"] {
-    flex-basis: 17%;
+    flex-basis: 17.5%;
+  }
+
+  @media (max-width: 1200px) {
+    &[for="departure"],
+    &[for="arrival"] {
+      flex-basis: 20%;
+    }
+
+    &[for="dateFrom"],
+    &[for="dateTo"] {
+      flex-basis: 16.4%;
+    }
   }
 
   @media (max-width: 992px) {
