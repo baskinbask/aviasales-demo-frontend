@@ -22,6 +22,8 @@ const cards = [
     price: 7777,
     carryon: "",
     laggage: 15,
+    remains: 4,
+    aggrigate: "ClickAvia",
     charter: true
   },
   {
@@ -48,6 +50,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 10,
+    aggrigate: "Билетик Авиа",
     charter: false
   },
   {
@@ -73,6 +77,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 14,
+    aggrigate: "Aviakassa",
     charter: false
   },
   {
@@ -98,6 +104,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 14,
+    aggrigate: "Biletix",
     charter: true
   },
   {
@@ -123,6 +131,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 14,
+    aggrigate: "ClickAvia",
     charter: false
   },
   {
@@ -148,6 +158,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 14,
+    aggrigate: "ClickAvia",
     charter: false
   },
   {
@@ -174,6 +186,8 @@ const cards = [
     price: 7777,
     carryon: 5,
     laggage: 15,
+    remains: 14,
+    aggrigate: "ClickAvia",
     charter: true
   }
 ];

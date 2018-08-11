@@ -27,8 +27,20 @@ const LeftCol = styled.div`
 `;
 
 const RightCol = styled.div`
+  position: relative;
   width: 509px;
   padding: 16px;
+
+  &::after {
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    width: 17px;
+    height: 14px;
+    margin-left: 10px;
+    content: "";
+    background: url(${backArrow}) no-repeat;
+  }
 `;
 
 const OptionPanel = styled.div`
@@ -89,6 +101,13 @@ const LaggageIcons = styled.div`
   }  
 `;
 
+const TicketRemains = styled.p`
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  color: #ff654e;
+`;
+
 const Button = styled.button`
   width: 162px;
   padding: 6px 44px;
@@ -116,18 +135,6 @@ const CharterPic = styled.div`
   color: #23a9f6;
   text-align: center;
   text-transform: uppercase;
-
-  &::after {
-    position: absolute;
-    right: -30px;
-    top: 0;
-    content: "";
-    display: block;
-    width: 17px;
-    height: 14px;
-    margin-left: 10px;
-    background: url(${backArrow}) no-repeat;
-  }
 `;
 
 const FlightDurWrap = styled.div`
@@ -224,8 +231,14 @@ class Card extends React.Component {
               laggage={this.props.laggage}
             />
           </LaggageWrap>
+          {this.props.remains &&
+            this.props.remains < 5 && (
+              <TicketRemains>
+                осталось {this.props.remains} билета
+              </TicketRemains>
+            )}
           <Button>Купить за {this.props.price} ₽</Button>
-          <PlaceToBuy>на Clickavia</PlaceToBuy>
+          <PlaceToBuy>на {this.props.aggrigate}</PlaceToBuy>
         </LeftCol>
         <RightCol>
           <FlexWrapper jc="space-between" ai="flex-start">
@@ -235,7 +248,10 @@ class Card extends React.Component {
                 <AirLogo airline={this.props.arrival.airline} />
               </div>
             ) : (
-              <AirLogo airline={this.props.departure.airline} />
+              <AirLogo
+                airline={this.props.departure.airline}
+                style={{ border: "none" }}
+              />
             )}
             {this.props.charter && <CharterPic>чартер</CharterPic>}
           </FlexWrapper>

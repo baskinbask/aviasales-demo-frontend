@@ -23,10 +23,8 @@ const SelectTag = styled.select`
 `;
 
 const OptionTag = styled.option`
-
-    & span {
-      color: #a0b0b9;
-    }  
+  & span {
+    color: #a0b0b9;
   }
 `;
 
@@ -41,7 +39,7 @@ class Select extends React.Component {
         required
       >
         <OptionTag>
-          {this.props.value}, {this.props.stage}
+          {this.props.value}, <i>эконом</i>
         </OptionTag>
         <OptionTag>
           {this.props.value}, {this.props.stage}

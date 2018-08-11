@@ -23,6 +23,10 @@ const AirLogoWrap = styled.div`
   padding: 0 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
+
+  & + div {
+    margin-left: 10px;
+  }
 `;
 
 function AirLogo(props) {
@@ -57,7 +61,7 @@ function AirLogo(props) {
       img = true;
   }
 
-  return <AirLogoWrap>{img}</AirLogoWrap>;
+  return <AirLogoWrap style={props.style}>{img}</AirLogoWrap>;
 }
 
 export default AirLogo;
