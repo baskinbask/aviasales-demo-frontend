@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import FlexWrapper from "../common/FlexWrapper";
 
 import checked from "./icons/checked.svg";
 import drop from "./icons/drop.svg";
 
 const BlockWrapper = styled.div`
-  padding-bottom: 12px;
   border-bottom: 1px solid #ccc;
 `;
 

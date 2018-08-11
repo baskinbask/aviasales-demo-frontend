@@ -14,8 +14,7 @@ import plane from "./icons/planeUp.svg";
 import drop from "./icons/drop.svg";
 
 const CardWrap = styled.div`
-  max-width: 718px;
-  margin-bottom: 40px;
+  ${"" /* max-width: 718px; */} margin-bottom: 40px;
   display: flex;
   border-radius: 4px;
   background: #fff;

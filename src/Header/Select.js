@@ -35,21 +35,9 @@ class Select extends React.Component {
         id={this.props.id}
         className={this.props.className}
         name={this.props.id}
-        value={this.props.value}
         required
       >
-        <OptionTag>
-          {this.props.value}, <i>эконом</i>
-        </OptionTag>
-        <OptionTag>
-          {this.props.value}, {this.props.stage}
-        </OptionTag>
-        <OptionTag>
-          {this.props.value}, {this.props.stage}
-        </OptionTag>
-        <OptionTag>
-          {this.props.value}, {this.props.stage}
-        </OptionTag>
+        <OptionTag selected>1 пассажир, эконом</OptionTag>
       </SelectTag>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
+import MediaQuery from "react-responsive";
 // import FlexWrapper from "../common/FlexWrapper";
 import SearchHeader from "./SearchHeader";
 import Filter from "./Filter";
@@ -36,7 +37,9 @@ class Search extends React.Component {
           <Grid>
             <Row>
               <Col lg={3}>
-                <Filter />
+                <MediaQuery minWidth={993}>
+                  <Filter />
+                </MediaQuery>
               </Col>
               <Col lg={7}>
                 {cards.map(card => (

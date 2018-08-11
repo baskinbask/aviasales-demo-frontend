@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import FlexWrapper from "../common/FlexWrapper";
 
 import drop from "./icons/drop.svg";
 import plane from "./icons/plane.svg";

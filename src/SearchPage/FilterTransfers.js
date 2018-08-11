@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import FlexWrapper from "../common/FlexWrapper";
 
 import checked from "./icons/checked.svg";
 import drop from "./icons/drop.svg";
@@ -56,7 +55,7 @@ const Label = styled.label`
     content: "";
     width: 18px;
     height: 18px;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     margin-right: 6px;
     border: 1px solid #a0b0b9;
     border-radius: 4px;
@@ -65,8 +64,8 @@ const Label = styled.label`
 
 const Input = styled.input`
   &:checked + label::before {
-    border: none;
-    background: url(${checked}) no-repeat;
+    border: 1px solid #00ace2;
+    background: #e1f8ff url(${checked}) 50% 50% no-repeat;
   }
 `;
 

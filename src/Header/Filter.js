@@ -32,7 +32,7 @@ class Filter extends Component {
         <Input id="arrival" type="text" placeholder="Город прибытия" />
         <Input id="dateFrom" type="text" placeholder="Туда" icon="calendar" />
         <Input id="dateTo" type="text" placeholder="Обратно" icon="calendar" />
-        <Select id="select" value="1 пассажир" stage="эконом" />
+        <Select id="select"/>
         <ButtonLink to="/search">
           <Button type="submit" value="Найти билеты" icon="plane" />
         </ButtonLink>
