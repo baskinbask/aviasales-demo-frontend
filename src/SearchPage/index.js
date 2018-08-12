@@ -8,10 +8,25 @@ import Filter from "./Filter";
 import Card from "./Card";
 import Footer from "../Footer";
 import cards from "./cardsArr";
+import filter from "./icons/filter.svg";
 
 const Content = styled.section`
   padding: 56px 0 40px 0;
   background: #eaeaea;
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+`;
+
+const ButtonFilter = styled.button`
+  margin: 16px 0;
+  width: 66px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  background: #23a9f6 url(${filter}) 50% 50% no-repeat;
+  cursor: pointer;
 `;
 
 const ButtonMore = styled.button`
@@ -28,13 +43,24 @@ const ButtonMore = styled.button`
   border-radius: 4px;
 `;
 
+const FluidGrid = styled(Grid)`
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 class Search extends React.Component {
   render() {
     return (
       <div>
         <SearchHeader />
         <Content>
-          <Grid>
+          <FluidGrid>
+            <MediaQuery minWidth={577} maxWidth={768}>
+              <Row center="xs">
+                <ButtonFilter />
+              </Row>
+            </MediaQuery>
             <Row>
               <Col lg={3}>
                 <MediaQuery minWidth={993}>
@@ -48,7 +74,7 @@ class Search extends React.Component {
                 <ButtonMore>Показать еще 10 билетов!</ButtonMore>
               </Col>
             </Row>
-          </Grid>
+          </FluidGrid>
         </Content>
         <Footer />
       </div>

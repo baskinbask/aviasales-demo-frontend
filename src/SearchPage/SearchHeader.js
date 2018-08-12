@@ -21,16 +21,32 @@ const WrapperBg = styled.div`
   );
 `;
 
-// const SearchHeader = styled.section`
-//   display= flex;
-// `;
+const CurrencyLabel = styled.div`
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+`;
+
+const FluidGrid = styled(Grid)`
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 
 class SearchHeader extends React.Component {
   render() {
     return (
       <WrapperBg>
-        <Grid>
+        <FluidGrid>
           <Logo />
+          <CurrencyLabel>rub</CurrencyLabel>
           <MediaQuery minWidth={577}>
             <Row>
               <FlexWrapper className="search__header_wrapper">
@@ -42,7 +58,13 @@ class SearchHeader extends React.Component {
                   city="mow"
                   value="Москва"
                 />
-                <Input id="arrival" type="text" placeholder="Город прибытия" />
+                <Input
+                  id="arrival"
+                  type="text"
+                  placeholder="Город прибытия"
+                  city="bcn"
+                  value="Барселона"
+                />
                 <Input
                   id="dateFrom"
                   type="text"
@@ -69,7 +91,7 @@ class SearchHeader extends React.Component {
               </FlexWrapper>
             </Row>
           </MediaQuery>
-        </Grid>
+        </FluidGrid>
       </WrapperBg>
     );
   }

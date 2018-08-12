@@ -135,7 +135,11 @@ class Input extends React.Component {
           name={this.props.name}
           required
         />
-        {this.props.city && <CityCode>{this.props.city}</CityCode>}
+        {this.props.city && !this.props.icon ? (
+          <CityCode style={{ right: "5px" }}>{this.props.city}</CityCode>
+        ) : (
+          <CityCode>{this.props.city}</CityCode>
+        )}
         {this.props.icon && <Icon name={this.props.icon} />}
       </LabelTag>
     );

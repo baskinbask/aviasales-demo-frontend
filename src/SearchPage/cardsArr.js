@@ -19,10 +19,10 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
+    price: "9 876",
     carryon: "",
-    laggage: 15,
-    remains: 4,
+    laggage: "",
+    remains: "4",
     aggrigate: "ClickAvia",
     charter: true
   },
@@ -47,10 +47,12 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 10,
+    price: "9 876",
+    carryon: "",
+    laggage: "",
+    carryon2: "10",
+    laggage2: "20",
+    remains: "10",
     aggrigate: "Билетик Авиа",
     charter: false
   },
@@ -74,11 +76,13 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 14,
+    price: "9 876",
+    carryon: "5",
+    laggage: "15",
+    remains: "14",
     aggrigate: "Aviakassa",
+    aggrigate2: { name: "ClickMe", price: "5 800" },
+    aggrigate3: { name: "Biletix", price: "6 800" },
     charter: false
   },
   {
@@ -101,10 +105,10 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 14,
+    price: "9 876",
+    carryon: "10",
+    laggage: "20",
+    remains: "14",
     aggrigate: "Biletix",
     charter: true
   },
@@ -128,11 +132,13 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 14,
+    price: "9 876",
+    carryon: "5",
+    laggage: "15",
+    remains: "14",
     aggrigate: "ClickAvia",
+    aggrigate2: { name: "ClickMe", price: "5 800" },
+    aggrigate3: { name: "Biletix", price: "6 800" },
     charter: false
   },
   {
@@ -155,10 +161,10 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 14,
+    price: "9 876",
+    carryon: "5",
+    laggage: "15",
+    remains: "14",
     aggrigate: "ClickAvia",
     charter: false
   },
@@ -183,10 +189,10 @@ const cards = [
       arrFrom: "15:00",
       durFrom: "4ч 55м"
     },
-    price: 7777,
-    carryon: 5,
-    laggage: 15,
-    remains: 14,
+    price: "9 876",
+    carryon: "5",
+    laggage: "15",
+    remains: "14",
     aggrigate: "ClickAvia",
     charter: true
   }

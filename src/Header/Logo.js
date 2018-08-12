@@ -26,17 +26,13 @@ const LogoStyled = styled.div`
   }
 `;
 
-class Logo extends React.Component {
-  render() {
-    return (
-      <LogoStyled>
-        <img src={logo} alt="Logo" />
-        <MediaQuery minWidth={577}>
-          <Link to="/">Aviasales</Link>
-        </MediaQuery>
-      </LogoStyled>
-    );
-  }
-}
+const Logo = () => (
+  <LogoStyled>
+    <img src={logo} alt="Logo" />
+    <MediaQuery minWidth={577}>
+      <Link to="/">Aviasales</Link>
+    </MediaQuery>
+  </LogoStyled>
+);
 
 export default Logo;

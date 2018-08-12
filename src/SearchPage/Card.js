@@ -21,14 +21,16 @@ const CardWrap = styled.div`
 `;
 
 const LeftCol = styled.div`
+  position: relative;
   padding: 10px 23px;
-  border-right: 1px solid #ddd;
+  padding-top: 0;
 `;
 
 const RightCol = styled.div`
   position: relative;
   width: 509px;
   padding: 16px;
+  border-left: 1px solid #ddd;
 
   &::after {
     position: absolute;
@@ -61,43 +63,57 @@ const OptionPanel = styled.div`
 `;
 
 const LaggageWrap = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100%;
   min-height: 45px;
-  justify-content: center;
+  justify-content: ${props => (props.double ? "space-around" : "center")};
 `;
 
 const LaggageIcons = styled.div`
   position: relative;
-  padding-top: 25px;
+  width: 50%;
+  height: 30px;
+  padding: 10px 0;
+  margin-bottom: 10px;
   font-size: 10px;
   text-align: center;
   color: #9ab0b9;
+  background: ${props => (props.double ? "#F8FBFB" : "#fff")};
+  border-bottom: ${props => (props.double ? "1px solid #eee" : "none")};
+  border-right: ${props => (props.double ? "1px solid #eee" : "none")};
+  border-radius: 4px 0 0 0;
 
    &::before {
     position: absolute;
     content: "${props => (props.carryon ? props.carryon : "X")}";
-    padding-top: 7px;    
-    margin-right: 6px;
-    width: 20px;
-    height: 20px;
-    right: 0;
-    top: 0;
+    padding-top: 7px;
+    width: 17px;
+    height: 23px;
+    right: 30%;
+    top: 8px;
     color: ${props => (props.carryon ? "#9ab0b9;" : "red;")};
-    background: url(${carryOn}) no-repeat;
+    background: url(${laggage}) no-repeat;
   }
 
   &::after {
     position: absolute;
     content: "${props => (props.laggage ? props.laggage : "X")}";
     padding-top: 7px;
-    width: 17px;
-    height: 23px;
-    left: 0;
-    top: 0;
+    width: 20px;
+    height: 20px;
+    left: 30%;
+    top: 8px;
     color: ${props => (props.laggage ? "#9ab0b9;" : "red;")};
-    background: url(${laggage}) no-repeat;
-  }  
+    background: url(${carryOn}) no-repeat;
+  }
+
+  & p {
+    margin: 0;
+    margin-top: 25px;
+  }
 `;
 
 const TicketRemains = styled.p`
@@ -121,6 +137,21 @@ const PlaceToBuy = styled.p`
   font-size: 12px;
   text-align: center;
   color: #a0b0b9;
+`;
+
+const PlaceToBuyAdditional = styled.div`
+  display: flex;
+  font-size: 12px;
+  color: #59bce5;
+
+  & p {
+    margin: 0;
+
+    &:nth-child(2) {
+      margin-top: 5px;
+      margin-left: auto;
+    }
+  }
 `;
 
 const CharterPic = styled.div`
@@ -213,8 +244,12 @@ const AirportCode = styled.span`
 
 function Laggage(props) {
   return (
-    <LaggageIcons carryon={props.carryon} laggage={props.laggage}>
-      {!props.carryon && !props.laggage && <span>Нет багажа</span>}
+    <LaggageIcons
+      carryon={props.carryon}
+      laggage={props.laggage}
+      double={props.double}
+    >
+      {!props.carryon && !props.laggage && <p>Нет багажа</p>}
     </LaggageIcons>
   );
 }
@@ -223,22 +258,63 @@ class Card extends React.Component {
   render() {
     return (
       <CardWrap>
-        <LeftCol>
-          <LaggageWrap>
-            <Laggage
-              carryon={this.props.carryon}
-              laggage={this.props.laggage}
-            />
-          </LaggageWrap>
-          {this.props.remains &&
-            this.props.remains < 5 && (
-              <TicketRemains>
-                осталось {this.props.remains} билета
-              </TicketRemains>
+        <div>
+          <div>
+            <LaggageWrap
+              double={this.props.carryon2 && this.props.laggage2 ? true : false}
+            >
+              <Laggage
+                double={
+                  this.props.carryon2 && this.props.laggage2 ? true : false
+                }
+                carryon={this.props.carryon}
+                laggage={this.props.laggage}
+              />
+              {this.props.carryon2 &&
+                this.props.laggage2 && (
+                  <Laggage
+                    carryon={this.props.carryon2}
+                    laggage={this.props.laggage2}
+                  />
+                )}
+            </LaggageWrap>
+            {this.props.remains &&
+              this.props.remains < 5 && (
+                <TicketRemains>
+                  осталось {this.props.remains} билета
+                </TicketRemains>
+              )}
+          </div>
+          <LeftCol>
+            <Button>Купить за {this.props.price} ₽</Button>
+            <PlaceToBuy>на {this.props.aggrigate}</PlaceToBuy>
+            {this.props.aggrigate2 && (
+              <PlaceToBuyAdditional>
+                <p>{this.props.aggrigate2.name}</p>
+                <p>{this.props.aggrigate2.price} ₽</p>
+              </PlaceToBuyAdditional>
             )}
-          <Button>Купить за {this.props.price} ₽</Button>
-          <PlaceToBuy>на {this.props.aggrigate}</PlaceToBuy>
-        </LeftCol>
+            {this.props.aggrigate3 && (
+              <PlaceToBuyAdditional>
+                <p>{this.props.aggrigate3.name}</p>
+                <p>{this.props.aggrigate3.price} ₽</p>
+                <br />
+              </PlaceToBuyAdditional>
+            )}
+            {this.props.aggrigate3 && (
+              <p
+                style={{
+                  marginTop: "20px",
+                  color: "#59BCE5",
+                  fontSize: "12px",
+                  textAlign: "center"
+                }}
+              >
+                + Ещё 3 предложения
+              </p>
+            )}
+          </LeftCol>
+        </div>
         <RightCol>
           <FlexWrapper jc="space-between" ai="flex-start">
             {this.props.departure.airline && this.props.arrival.airline ? (
