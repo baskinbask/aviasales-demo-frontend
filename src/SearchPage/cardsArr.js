@@ -50,8 +50,8 @@ const cards = [
     price: "9 876",
     carryon: "",
     laggage: "",
-    carryon2: "10",
-    laggage2: "20",
+    carryon2: "20",
+    laggage2: "10",
     remains: "10",
     aggrigate: "Билетик Авиа",
     charter: false
@@ -78,7 +78,7 @@ const cards = [
     },
     price: "9 876",
     carryon: "5",
-    laggage: "15",
+    laggage: "?",
     remains: "14",
     aggrigate: "Aviakassa",
     aggrigate2: { name: "ClickMe", price: "5 800" },
@@ -106,8 +106,8 @@ const cards = [
       durFrom: "4ч 55м"
     },
     price: "9 876",
-    carryon: "10",
-    laggage: "20",
+    carryon: "20",
+    laggage: "10",
     remains: "14",
     aggrigate: "Biletix",
     charter: true
@@ -133,8 +133,8 @@ const cards = [
       durFrom: "4ч 55м"
     },
     price: "9 876",
-    carryon: "5",
-    laggage: "15",
+    carryon: "15",
+    laggage: "5",
     remains: "14",
     aggrigate: "ClickAvia",
     aggrigate2: { name: "ClickMe", price: "5 800" },
@@ -162,8 +162,8 @@ const cards = [
       durFrom: "4ч 55м"
     },
     price: "9 876",
-    carryon: "5",
-    laggage: "15",
+    carryon: "20",
+    laggage: "10",
     remains: "14",
     aggrigate: "ClickAvia",
     charter: false
@@ -190,8 +190,8 @@ const cards = [
       durFrom: "4ч 55м"
     },
     price: "9 876",
-    carryon: "5",
-    laggage: "15",
+    carryon: "15",
+    laggage: "5",
     remains: "14",
     aggrigate: "ClickAvia",
     charter: true

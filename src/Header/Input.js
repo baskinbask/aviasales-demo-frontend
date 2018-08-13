@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import "react-day-picker/lib/style.css";
 
 import Icon from "./Icons";
 
@@ -73,7 +75,7 @@ const CityCode = styled.span`
   text-transform: uppercase;
 `;
 
-const InputTag = styled.input`
+const InputTag = styled(DayPickerInput)`
   width: 100%;
   padding: 18px 0 18px 10px;
   box-sizing: border-box;
@@ -132,7 +134,6 @@ class Input extends React.Component {
           type={this.props.type}
           placeholder={this.props.placeholder}
           value={this.props.value}
-          name={this.props.name}
           required
         />
         {this.props.city && !this.props.icon ? (

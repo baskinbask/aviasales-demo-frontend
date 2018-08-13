@@ -6,16 +6,21 @@ import MediaQuery from "react-responsive";
 import SearchHeader from "./SearchHeader";
 import Filter from "./Filter";
 import Card from "./Card";
+import CardMob from "./CardMob";
 import Footer from "../Footer";
 import cards from "./cardsArr";
 import filter from "./icons/filter.svg";
 
 const Content = styled.section`
-  padding: 56px 0 40px 0;
+  padding: 56px 0 40px;
   background: #eaeaea;
 
   @media (max-width: 768px) {
     padding-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 0;
   }
 `;
 
@@ -34,7 +39,7 @@ const ButtonUp = styled.button`
   color: #fff;
 `;
 
-const ButtonFilter = styled.button`
+const ButtonFilterIcon = styled.button`
   margin: 16px 0;
   width: 66px;
   height: 48px;
@@ -58,6 +63,15 @@ const ButtonMore = styled.button`
   border-radius: 4px;
 `;
 
+const ButtonFilter = ButtonMore.extend`
+  width: initial;
+  margin-bottom: 16px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 24px;
+  border-radius: 100px;
+`;
+
 const FluidGrid = styled(Grid)`
   @media (max-width: 768px) {
     width: 100%;
@@ -78,7 +92,7 @@ class Search extends React.Component {
             </MediaQuery>
             <MediaQuery minWidth={577} maxWidth={768}>
               <Row center="xs">
-                <ButtonFilter />
+                <ButtonFilterIcon />
               </Row>
             </MediaQuery>
             <Row>
@@ -87,11 +101,34 @@ class Search extends React.Component {
                   <Filter />
                 </MediaQuery>
               </Col>
-              <Col lg={7}>
-                {cards.map(card => (
-                  <Card {...card} />
-                ))}
-                <ButtonMore>Показать еще 10 билетов!</ButtonMore>
+              <Col lg={7} xs={12}>
+                <MediaQuery maxWidth={576}>
+                  <CardMob
+                    {...cards[0]}
+                    title="Самый дешёвый"
+                    colorBg="#83D40B"
+                  />
+                  <CardMob
+                    {...cards[1]}
+                    title="Самый быстрый"
+                    colorBg="#AF7542"
+                  />
+                  <CardMob
+                    {...cards[2]}
+                    title="Лучший билет"
+                    colorBg="#C279D1"
+                  />
+                  {cards.map(card => (
+                    <CardMob {...card} />
+                  ))}
+                  <ButtonFilter>Фильтровать</ButtonFilter>
+                </MediaQuery>
+                <MediaQuery minWidth={577}>
+                  {cards.map(card => (
+                    <Card {...card} />
+                  ))}
+                  <ButtonMore>Показать еще 10 билетов!</ButtonMore>
+                </MediaQuery>
               </Col>
             </Row>
           </FluidGrid>

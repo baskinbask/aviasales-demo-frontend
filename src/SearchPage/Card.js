@@ -11,7 +11,7 @@ import plane from "./icons/planeUp.svg";
 import drop from "./icons/drop.svg";
 
 const CardWrap = styled.div`
-  ${"" /* max-width: 718px; */} margin-bottom: 40px;
+  ${"" /* max-width: 718px; */} margin-bottom: 20px;
   display: flex;
   border-radius: 4px;
   background: #fff;
@@ -166,6 +166,7 @@ const CharterPic = styled.div`
 
 const FlightDurWrap = styled.div`
   width: 100%;
+  flex: 1;
   max-width: 210px;
   margin-left: 5px;
   margin-right: 5px;

@@ -17,6 +17,10 @@ const DepartureTime = styled.p`
     padding-right: 8px;
     background: url(${pin}) no-repeat;
   }
+
+  @media (max-width: 678px) {
+    font-size: 20px;
+  }
 `;
 
 const ArriveTime = DepartureTime.extend`

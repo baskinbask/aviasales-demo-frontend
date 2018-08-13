@@ -75,10 +75,12 @@ class SearchHeader extends React.Component {
     return (
       <WrapperBg>
         <FluidGrid>
-          <MobHeaderText>
-            Москва - Барселона
-            <p>24 фев — 3 март, 1 пассажир</p>
-          </MobHeaderText>
+          <MediaQuery maxWidth={576}>
+            <MobHeaderText>
+              Москва - Барселона
+              <p>24 фев — 3 март, 1 пассажир</p>
+            </MobHeaderText>
+          </MediaQuery>
           <CurrencyLabel>rub</CurrencyLabel>
           <MediaQuery minWidth={577}>
             <Logo />
