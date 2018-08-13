@@ -7,10 +7,10 @@ import Logo from "../Header/Logo";
 import Input from "../Header/Input";
 import Select from "../Header/Select";
 import Button from "../Header/Button";
+import back from "./icons/back.svg";
 
 const WrapperBg = styled.div`
-  min-height: 10vh;
-  background: linear-gradient(
+  ${"" /* min-height: 10vh; */} background: linear-gradient(
     119.26deg,
     #00b0de -25.78%,
     #01aedc -22.1%,
@@ -32,6 +32,36 @@ const CurrencyLabel = styled.div`
   text-align: center;
   text-transform: uppercase;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
+`;
+
+const MobHeaderText = styled.p`
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  padding-left: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+
+  & p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: 6px;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url(${back}) no-repeat;
+  }
 `;
 
 const FluidGrid = styled(Grid)`
@@ -45,9 +75,13 @@ class SearchHeader extends React.Component {
     return (
       <WrapperBg>
         <FluidGrid>
-          <Logo />
+          <MobHeaderText>
+            Москва - Барселона
+            <p>24 фев — 3 март, 1 пассажир</p>
+          </MobHeaderText>
           <CurrencyLabel>rub</CurrencyLabel>
           <MediaQuery minWidth={577}>
+            <Logo />
             <Row>
               <FlexWrapper className="search__header_wrapper">
                 <Input

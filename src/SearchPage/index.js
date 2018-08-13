@@ -19,6 +19,21 @@ const Content = styled.section`
   }
 `;
 
+const ButtonUp = styled.button`
+  margin: 8px 0 16px;
+  width: 88px;
+  height: 28px;
+  background: #00ace2;
+  opacity: 0.5;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+`;
+
 const ButtonFilter = styled.button`
   margin: 16px 0;
   width: 66px;
@@ -56,6 +71,11 @@ class Search extends React.Component {
         <SearchHeader />
         <Content>
           <FluidGrid>
+            <MediaQuery maxWidth={576}>
+              <Row center="xs">
+                <ButtonUp>Наверх</ButtonUp>
+              </Row>
+            </MediaQuery>
             <MediaQuery minWidth={577} maxWidth={768}>
               <Row center="xs">
                 <ButtonFilter />

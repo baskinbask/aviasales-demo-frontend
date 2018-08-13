@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import MediaQuery from "react-responsive";
 import FlexWrapper from "../common/FlexWrapper";
 
 import FlightAttrs from "./FlightAttrs";
 import AirLogo from "./AirLogo";
 import carryOn from "./icons/laggageS.svg";
 import laggage from "./icons/laggageL.svg";
-import rusAir from "./icons/rus.png";
-import rusAir2x from "./icons/rus@2x.png";
 import backArrow from "./icons/returnArr.svg";
 import plane from "./icons/planeUp.svg";
 import drop from "./icons/drop.svg";
