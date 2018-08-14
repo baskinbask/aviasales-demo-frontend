@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
@@ -82,6 +83,9 @@ class Search extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Aviasales | Search</title>
+        </Helmet>
         <SearchHeader />
         <Content>
           <FluidGrid>

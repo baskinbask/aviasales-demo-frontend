@@ -2,6 +2,7 @@
   position: relative;
 }
 
+/*Top-destinations*/
 .top-destinations_cards {
   margin-top: 60px;
 }
@@ -21,6 +22,7 @@
   margin: 0 auto;
 }
 
+/*Slider*/
 .slick-prev:before,
 .slick-next:before {
   color: #ccc;
@@ -147,4 +149,48 @@ button.search__header_btn:hover {
     font-size: 16px;
     padding: 10px;
   }
+}
+
+/*Input Dates - DatePicker*/
+
+.DayPickerInput input {
+  flex: 1 16%;
+  margin-right: 2px;
+  padding: 18px 0 18px 10px;
+  border: none;
+}
+.DayPickerInput::placeholder {
+  color: #a0b0b9;
+}
+
+.DayPicker {
+  margin-top: -55px;
+  width: 385px;
+  background: #fff;
+  padding: 0;
+}
+
+.DayPicker-Weekdays {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.DayPicker-NavButton--prev {
+  position: absolute;
+  left: 20px;
+}
+
+.DayPicker-Caption {
+  width: 100%;
+  margin-left: 50px;
+  text-transform: uppercase;
+}
+
+.DayPicker-Caption i {
+  font-size: 12px;
+}
+
+.DayPicker-Day--future {
+  background: #eee;
 }

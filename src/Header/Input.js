@@ -75,7 +75,7 @@ const CityCode = styled.span`
   text-transform: uppercase;
 `;
 
-const InputTag = styled(DayPickerInput)`
+const InputTag = styled.input`
   width: 100%;
   padding: 18px 0 18px 10px;
   box-sizing: border-box;

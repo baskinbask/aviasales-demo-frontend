@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+// import DayPickerInput from "react-day-picker/DayPickerInput";
+
 import FlexWrapper from "../common/FlexWrapper";
 import Input from "./Input";
 import Select from "./Select";
@@ -32,7 +34,7 @@ class Filter extends Component {
         <Input id="arrival" type="text" placeholder="Город прибытия" />
         <Input id="dateFrom" type="text" placeholder="Туда" icon="calendar" />
         <Input id="dateTo" type="text" placeholder="Обратно" icon="calendar" />
-        <Select id="select"/>
+        <Select id="select" />
         <ButtonLink to="/search">
           <Button type="submit" value="Найти билеты" icon="plane" />
         </ButtonLink>

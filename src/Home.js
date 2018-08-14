@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 // import { BrowserRouter, Route, Link } from "react-router-dom";
 // import { Grid, Row, Col } from "react-flexbox-grid";
 // import styled from "styled-components";
@@ -16,6 +17,9 @@ class Home extends Component {
   render() {
     return (
       <div className="home-page_wrapper">
+        <Helmet>
+          <title>Aviasales | Home</title>
+        </Helmet>
         <Header />
         <TopDestinations />
         <TopPrices />
