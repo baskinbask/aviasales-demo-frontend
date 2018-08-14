@@ -52,10 +52,43 @@ function OverlayComponent({ classNames, children, ...props }) {
 }
 
 export default class DateInput extends React.Component {
-  render() {
-    const future = {
-      after: new Date(2018, 7, 14)
+  constructor(props) {
+    super(props);
+    this.handleDayChange = this.handleDayChange.bind(this);
+    this.state = {
+      selectedDay: undefined
     };
-    return <DayPickerInput overlayComponent={OverlayComponent} placeholder={this.props.placeholder} format="LL" formatDate={formatDate} parseDate={parseDate} dayPickerProps={{ locale: "ru", localeUtils: MomentLocaleUtils, modifiers: future}} hideOnDayClick={false} showOutsideDays />;
+  }
+  handleDayChange(day) {
+    this.setState({ selectedDay: day });
+  }
+
+  render() {
+    const { selectedDay } = this.state;
+    const future = {
+      after: new Date(selectedDay)
+    };
+    const past = {
+      before: new Date(selectedDay)
+    };
+
+    return (
+      <DayPickerInput
+        overlayComponent={OverlayComponent}
+        placeholder={this.props.placeholder}
+        format="LL"
+        formatDate={formatDate}
+        parseDate={parseDate}
+        onDayChange={this.handleDayChange}
+        dayPickerProps={{
+          locale: "ru",
+          localeUtils: MomentLocaleUtils,
+          modifiers: this.props.future ? { future } : { past },
+          showOutsideDays: false,
+          selectedDays: this.state.selectedDay
+        }}
+        hideOnDayClick={false}
+      />
+    );
   }
 }

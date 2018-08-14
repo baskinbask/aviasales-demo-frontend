@@ -104,7 +104,7 @@ class SearchHeader extends React.Component {
                   city="bcn"
                   value="Барселона"
                 />
-                <DateInput placeholder="Туда" />
+                <DateInput placeholder="Туда" future />
                 <DateInput placeholder="Обратно" />
                 <Select
                   className="search__header_select"

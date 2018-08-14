@@ -146,3 +146,4 @@ class FilterAirlines extends React.Component {
 }
 
 export default FilterAirlines;
+export { Label, Input };

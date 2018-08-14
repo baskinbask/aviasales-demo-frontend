@@ -100,12 +100,12 @@ class Search extends React.Component {
               </Row>
             </MediaQuery>
             <Row>
-              <Col lg={3}>
+              <Col xl={3} lg={4}>
                 <MediaQuery minWidth={993}>
                   <Filter />
                 </MediaQuery>
               </Col>
-              <Col lg={7} xs={12}>
+              <Col xl={7} lg={8} xs={12}>
                 <MediaQuery maxWidth={576}>
                   <CardMob
                     {...cards[0]}

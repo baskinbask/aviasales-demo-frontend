@@ -17,20 +17,10 @@ const LabelTag = styled.label`
     flex-basis: 22%;
   }
 
-  &[for="dateFrom"],
-  &[for="dateTo"] {
-    flex-basis: 17.5%;
-  }
-
   @media (max-width: 1200px) {
     &[for="departure"],
     &[for="arrival"] {
       flex-basis: 20%;
-    }
-
-    &[for="dateFrom"],
-    &[for="dateTo"] {
-      flex-basis: 16.4%;
     }
   }
 
@@ -43,11 +33,6 @@ const LabelTag = styled.label`
     &[for="arrival"] {
       flex-basis: 49.5%;
     }
-
-    &[for="dateFrom"],
-    &[for="dateTo"] {
-      flex-basis: 24.6%;
-    }
   }
 
   @media (max-width: 576px) {
@@ -58,11 +43,6 @@ const LabelTag = styled.label`
     &[for="departure"],
     &[for="arrival"] {
       flex-basis: 100%;
-    }
-
-    &[for="dateFrom"],
-    &[for="dateTo"] {
-      flex-basis: 49.6%;
     }
   }
 `;
