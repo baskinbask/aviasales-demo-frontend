@@ -11,6 +11,7 @@ import Select from "../Header/Select";
 import Button from "../Header/Button";
 import back from "./icons/back.svg";
 import DateInput from "./DateInput";
+import InputDown from "./InputDownshift";
 
 const WrapperBg = styled.div`
   ${"" /* min-height: 10vh; */} background: linear-gradient(
@@ -97,13 +98,14 @@ class SearchHeader extends React.Component {
                   city="mow"
                   value="Москва"
                 />
-                <Input
+                <InputDown />
+                {/* <Input
                   id="arrival"
                   type="text"
                   placeholder="Город прибытия"
                   city="bcn"
                   value="Барселона"
-                />
+                /> */}
                 <DateInput placeholder="Туда" future />
                 <DateInput placeholder="Обратно" />
                 <Select

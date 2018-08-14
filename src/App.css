@@ -8,17 +8,40 @@ p {
   box-sizing: border-box;
 }
 
-/*Top-destinations*/
-.top-destinations_cards {
-  margin-top: 60px;
+/*Header*/
+.select__wrap {
+  flex-basis: 19.5%;
+  text-align-last: left;
 }
-@media (max-width: 576px) {
-  .top-destinations_cards {
-    margin-top: 0;
+
+@media (max-width: 992px) {
+  .select__wrap {
+    flex-basis: 49.7%;
+  }
+  .select__wrap > div {
+    border-radius: 0 0 4px 0;
   }
 }
 
 @media (max-width: 576px) {
+  .select__wrap {
+    flex-basis: 100%;
+  }
+  .select__wrap > div {
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+/*Top-destinations*/
+.top-destinations_cards {
+  margin-top: 60px;
+}
+
+@media (max-width: 576px) {
+  .top-destinations_cards {
+    margin-top: 0;
+  }
+
   .card-flag {
     display: none;
   }
@@ -139,26 +162,21 @@ button.search__header_btn:hover {
     border-radius: 0 0 4px 0;
   }
 
-  .search__header_select {
+  .search__header_wrapper .select__wrap {
     max-width: 24.5%;
-    border-radius: 0;
     margin-right: 2px;
+  }
+
+  .search__header_wrapper .select__wrap > div {
+    border-radius: 0;
   }
 }
 
 @media (max-width: 768px) {
-  .search__header_select {
-    flex-basis: 25%;
-  }
-
   button.search__header_btn {
     font-size: 16px;
     padding: 10px;
   }
-}
-
-#selectCheck:checked ~ .dropDownCard {
-  display: block;
 }
 
 /*Input Dates - DatePicker*/
@@ -213,6 +231,11 @@ button.search__header_btn:hover {
 .DayPicker-Day--future,
 .DayPicker-Day--past {
   background: #eee;
+  border-radius: 0;
+}
+
+.DayPicker-Day {
+  border-radius: 0;
 }
 
 @media (max-width: 1200px) {
@@ -236,7 +259,7 @@ button.search__header_btn:hover {
 @media (max-width: 576px) {
   .DayPickerInput,
   .DayPickerInput input {
-    flex-basis: 49.35%;
+    flex-basis: 49.3%;
     margin-right: 0;
     margin-bottom: 1px;
   }

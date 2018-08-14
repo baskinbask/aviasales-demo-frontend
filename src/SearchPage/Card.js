@@ -72,7 +72,7 @@ const LaggageWrap = styled.div`
 const LaggageIcons = styled.div`
   position: relative;
   width: 50%;
-  height: 30px;
+  min-height: 50px;
   padding: 10px 0;
   margin-bottom: 10px;
   font-size: 10px;
@@ -277,7 +277,7 @@ class Card extends React.Component {
                 )}
             </LaggageWrap>
             {this.props.remains &&
-              this.props.remains < 5 && (
+              this.props.remains < 10 && (
                 <TicketRemains>
                   осталось {this.props.remains} билета
                 </TicketRemains>
