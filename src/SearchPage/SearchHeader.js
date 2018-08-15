@@ -98,16 +98,9 @@ class SearchHeader extends React.Component {
                   city="mow"
                   value="Москва"
                 />
-                <InputDown />
-                {/* <Input
-                  id="arrival"
-                  type="text"
-                  placeholder="Город прибытия"
-                  city="bcn"
-                  value="Барселона"
-                /> */}
-                <DateInput placeholder="Туда" future />
-                <DateInput placeholder="Обратно" />
+                <InputDown className="downshift-input" />
+                <DateInput placeholder="Туда" icon="calendar" future />
+                <DateInput placeholder="Обратно" icon="calendar" />
                 <Select
                   className="search__header_select"
                   id="select"

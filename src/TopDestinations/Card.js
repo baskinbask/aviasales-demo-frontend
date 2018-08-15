@@ -32,7 +32,7 @@ const CardWrap = styled.div`
 const InfoWrap = FlexWrapper.extend`
   display: flex;
   justify-content: space-between;
-  padding: 12px 18px 16px;
+  padding: 12px 16px 16px;
 `;
 
 const Price = styled.p`

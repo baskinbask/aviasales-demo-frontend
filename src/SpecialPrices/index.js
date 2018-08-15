@@ -57,14 +57,7 @@ class SpecialPrices extends React.Component {
                 <Title>Спецпредложения на авиабилеты</Title>
                 <FlexWrapper className="specPrices__cards" jc="space-between">
                   {cardsSpec.map((item, index) => (
-                    <Card
-                      city={item.city}
-                      icon={item.icon}
-                      title={item.title}
-                      air={item.air}
-                      logo={item.logo}
-                      price={item.price}
-                      remain={item.remain}
+                    <Card {...item}
                     />
                   ))}
                 </FlexWrapper>

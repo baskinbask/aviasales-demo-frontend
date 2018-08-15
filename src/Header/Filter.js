@@ -33,8 +33,8 @@ class Filter extends Component {
           value="Москва"
         />
         <Input id="arrival" type="text" placeholder="Город прибытия" />
-        <DateInput placeholder="Туда" future />
-        <DateInput placeholder="Обратно" />
+        <DateInput placeholder="Туда" icon="calendar" future />
+        <DateInput placeholder="Обратно" icon="calendar" />
         <Select id="select" />
         <ButtonLink to="/search">
           <Button type="submit" value="Найти билеты" icon="plane" />

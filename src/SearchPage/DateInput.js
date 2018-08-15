@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import moment from "moment";
-// import Helmet from "react-helmet";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import MomentLocaleUtils, {
   formatDate,
@@ -9,7 +7,7 @@ import MomentLocaleUtils, {
 import "moment/locale/ru";
 import "react-day-picker/lib/style.css";
 import styled from "styled-components";
-// import FlexWrapper from "../common/FlexWrapper";
+import Icon from "../Header/Icons";
 
 const Toggle = styled.div`
   display: inline-block;
@@ -39,6 +37,8 @@ const Text = styled.span`
   color: #4a4a4a;
 `;
 
+const prices = [23456, 24567, 24535, 23456, 27890];
+
 function OverlayComponent({ classNames, children, ...props }) {
   return (
     <div className={classNames.overlayWrapper} {...props}>
@@ -50,6 +50,34 @@ function OverlayComponent({ classNames, children, ...props }) {
     </div>
   );
 }
+
+// function renderDay(day) {
+//   const date = day.getDate();
+//   const dateStyle = {
+//     position: "absolute",
+//     color: "lightgray",
+//     bottom: 0,
+//     right: 0,
+//     fontSize: 20
+//   };
+//   const birthdayStyle = { fontSize: "0.8em", textAlign: "left" };
+//   const cellStyle = {
+//     height: 50,
+//     width: 60,
+//     position: "relative"
+//   };
+//   return (
+//     <div style={cellStyle}>
+//       <div style={dateStyle}>{date}</div>
+//       {prices &&
+//         prices.map((price, i) => (
+//           <div key={i} style={birthdayStyle}>
+//             {price}
+//           </div>
+//         ))}
+//     </div>
+//   );
+// }
 
 export default class DateInput extends React.Component {
   constructor(props) {
@@ -73,22 +101,27 @@ export default class DateInput extends React.Component {
     };
 
     return (
-      <DayPickerInput
-        overlayComponent={OverlayComponent}
-        placeholder={this.props.placeholder}
-        format="LL"
-        formatDate={formatDate}
-        parseDate={parseDate}
-        onDayChange={this.handleDayChange}
-        dayPickerProps={{
-          locale: "ru",
-          localeUtils: MomentLocaleUtils,
-          modifiers: this.props.future ? { future } : { past },
-          showOutsideDays: false,
-          selectedDays: this.state.selectedDay
-        }}
-        hideOnDayClick={false}
-      />
+      <div className="DateInput-wrapper" style={{ position: "relative" }}>
+        <DayPickerInput
+          overlayComponent={OverlayComponent}
+          placeholder={this.props.placeholder}
+          format="LL"
+          formatDate={formatDate}
+          parseDate={parseDate}
+          onDayChange={this.handleDayChange}
+          dayPickerProps={{
+            locale: "ru",
+            localeUtils: MomentLocaleUtils,
+            modifiers: this.props.future ? { future } : { past },
+            showOutsideDays: true,
+            selectedDays: this.state.selectedDay
+            // renderDay: { renderDay },
+            // canChangeMonth: false
+          }}
+          hideOnDayClick={false}
+        />
+        <Icon name={this.props.icon} />
+      </div>
     );
   }
 }

@@ -19,11 +19,11 @@ import Downshift from "downshift";
 
 const items = [
   { country: "Таиланд", city: "Бангкок", code: "BKK" },
-  { country: "Таиланд", city: "Бангладеш", code: "BKK" },
-  { country: "Таиланд", city: "Бирма", code: "BKK" },
-  { country: "Таиланд", city: "Бакойоко", code: "BKK" },
-  { country: "Таиланд", city: "Курбан", code: "BKK" },
-  { country: "Таиланд", city: "Карабан", code: "BKK" }
+  { country: "Испания", city: "Бараселона", code: "BCN" },
+  { country: "Грузия", city: "Батуми", code: "BKK" },
+  { country: "Индонезия", city: "Денпасар Бали", code: "BKK" },
+  { country: "Бангладеш", city: "Дакка", code: "BKK" },
+  { country: "Россия", city: "Барнаул", code: "BKK" }
 ];
 
 const Wrapper = styled.div`
@@ -31,6 +31,7 @@ const Wrapper = styled.div`
 `;
 
 const InputTag = styled.input`
+  width: 100%;
   box-sizing: border-box;
   margin-right: 2px;
   padding: 18px 0 18px 10px;
@@ -43,10 +44,10 @@ const InputTag = styled.input`
 
 const List = styled.ul`
   position: absolute;
+  width: 100%;
   z-index: 10;
   top: 59px;
   left: 0;
-  min-width: 200px;
   margin-top: -5px;
   padding: 0;
   background: #fff;
@@ -54,17 +55,22 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   display: flex;
+  flex-wrap: nowrap;
   padding: 16px;
   font-size: 14px;
   font-weight: bold;
   line-height: 18px;
   color: #4a4a4a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
 
   &:nth-child(even) {
     background: #f4f4f4;
   }
 
   & i {
+    font-style: normal;
     color: #a0b0b9;
   }
 
@@ -93,7 +99,7 @@ export default class InputDown extends React.Component {
           highlightedIndex,
           selectedItem
         }) => (
-          <div style={{ position: "relative" }}>
+          <div className={this.props.className}>
             <label {...getLabelProps()} />
             <InputTag
               {...getInputProps()}
@@ -120,7 +126,7 @@ export default class InputDown extends React.Component {
                           }
                         })}
                       >
-                        {item.city},<i> {item.country}</i>
+                        {item.city}, <i>{item.country}</i>
                         <span>{item.code}</span>
                       </ListItem>
                     ))
