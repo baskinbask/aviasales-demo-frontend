@@ -114,6 +114,7 @@ const LaggageIcons = styled.div`
 `;
 
 const TicketRemains = styled.p`
+  margin-top: 0;
   line-height: 18px;
   font-size: 12px;
   text-align: center;

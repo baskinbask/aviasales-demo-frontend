@@ -77,25 +77,25 @@ class FilterTransfers extends React.Component {
       <BlockWrapper>
         <Title count={this.props.count}>{this.props.title}</Title>
         <BlockFilters>
-          <Input type="checkbox" hidden checked />
-          <Label>Все</Label>
-          <Input type="checkbox" hidden />
-          <Label>
+          <Input id="transfAll" type="checkbox" hidden />
+          <Label htmlFor="transfAll">Все</Label>
+          <Input id="transf1" type="checkbox" hidden />
+          <Label htmlFor="transf1">
             Без пересадок
             <span>5 123 ₽</span>
           </Label>
-          <Input type="checkbox" hidden />
-          <Label>
+          <Input id="transf2" type="checkbox" hidden />
+          <Label htmlFor="transf2">
             1 пересадка
             <span>4 777 ₽</span>
           </Label>
-          <Input type="checkbox" hidden checked />
-          <Label>
+          <Input id="transf3" type="checkbox" hidden checked />
+          <Label htmlFor="transf3">
             2 пересадки
             <span>4 123 ₽</span>
           </Label>
-          <Input type="checkbox" hidden />
-          <Label>
+          <Input id="transf4" type="checkbox" hidden />
+          <Label htmlFor="transf4">
             3 пересадки
             <span>3 789 ₽</span>
           </Label>

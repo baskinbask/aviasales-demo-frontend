@@ -10,7 +10,7 @@ import Input from "../Header/Input";
 import Select from "../Header/Select";
 import Button from "../Header/Button";
 import back from "./icons/back.svg";
-import DateInput from "./DateInput";
+import DateInput from "./DateInput.1";
 import InputDown from "./InputDownshift";
 
 const WrapperBg = styled.div`
@@ -99,8 +99,8 @@ class SearchHeader extends React.Component {
                   value="Москва"
                 />
                 <InputDown className="downshift-input" />
-                <DateInput placeholder="Туда" icon="calendar" future />
-                <DateInput placeholder="Обратно" icon="calendar" />
+                <DateInput icon="calendar" />
+                {/* <DateInput placeholder="Обратно" icon="calendar" /> */}
                 <Select
                   className="search__header_select"
                   id="select"

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import ArrowIcon from "./icons/arrow.svg";
-import CalendarIcon from "./icons/calendar.svg";
-import DropdownIcon from "./icons/drop.svg";
-import PlaneIcon from "./icons/aero.svg";
+import arrowIcon from "./icons/arrow.svg";
+import calendarIcon from "./icons/calendar.svg";
+import dropdownIcon from "./icons/drop.svg";
+import planeIcon from "./icons/aero.svg";
 
 const IconStyled = styled.div`
   position: absolute;
@@ -17,11 +17,11 @@ const IconStyled = styled.div`
 
 const Arrow = IconStyled.extend`
   top: 19px;
-  background: url(${ArrowIcon}) no-repeat;
+  background: url(${arrowIcon}) no-repeat;
 `;
 
 const Calendar = IconStyled.extend`
-  background: url(${CalendarIcon}) no-repeat;
+  background: url(${calendarIcon}) no-repeat;
 `;
 
 const Dropdown = IconStyled.extend`
@@ -29,7 +29,7 @@ const Dropdown = IconStyled.extend`
   right: 20px;
   width: 10px;
   height: 6px;
-  background: url(${DropdownIcon}) no-repeat;
+  background: url(${dropdownIcon}) no-repeat;
 `;
 
 const Plane = IconStyled.extend`
@@ -37,7 +37,7 @@ const Plane = IconStyled.extend`
   right: 20px;
   width: 25px;
   height: 22px;
-  background: url(${PlaneIcon}) no-repeat;
+  background: url(${planeIcon}) no-repeat;
 
   @media (max-width: 576px) {
     top: 18px;

@@ -101,7 +101,7 @@ export default class DateInput extends React.Component {
     };
 
     return (
-      <div className="DateInput-wrapper" style={{ position: "relative" }}>
+      <div className="DateInput-wrapper">
         <DayPickerInput
           overlayComponent={OverlayComponent}
           placeholder={this.props.placeholder}

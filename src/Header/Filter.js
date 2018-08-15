@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import FlexWrapper from "../common/FlexWrapper";
 import Input from "./Input";
-import DateInput from "../SearchPage/DateInput";
+import DateInput from "../SearchPage/DateInput.1";
 import Select from "./Select";
 import Button from "./Button";
 
@@ -33,8 +33,9 @@ class Filter extends Component {
           value="Москва"
         />
         <Input id="arrival" type="text" placeholder="Город прибытия" />
-        <DateInput placeholder="Туда" icon="calendar" future />
-        <DateInput placeholder="Обратно" icon="calendar" />
+        <DateInput icon="calendar" />
+        {/* <DateInput placeholder="Туда" icon="calendar" future />
+        <DateInput placeholder="Обратно" icon="calendar" /> */}
         <Select id="select" />
         <ButtonLink to="/search">
           <Button type="submit" value="Найти билеты" icon="plane" />

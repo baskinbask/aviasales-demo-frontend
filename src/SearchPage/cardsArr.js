@@ -22,6 +22,8 @@ const cards = [
     price: "9 876",
     carryon: "",
     laggage: "",
+    carryon2: "15",
+    laggage2: "5",
     remains: "4",
     aggrigate: "ClickAvia",
     charter: true

@@ -33,9 +33,9 @@ const CounterBtn = styled.button`
 `;
 
 export default class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0, ...props };
+  constructor() {
+    super();
+    this.state = { count: 0 };
     this.clickIncrement = this.clickIncrement.bind(this);
     this.clickDecrement = this.clickDecrement.bind(this);
   }

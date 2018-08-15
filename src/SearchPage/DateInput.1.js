@@ -1,11 +1,56 @@
 import React, { Component } from "react";
-import moment from "moment";
-import Helmet from "react-helmet";
 import DayPickerInput from "react-day-picker/DayPickerInput";
-import { formatDate, parseDate } from "react-day-picker/moment";
+import moment from "moment";
+import MomentLocaleUtils, {
+  formatDate,
+  parseDate
+} from "react-day-picker/moment";
+import "moment/locale/ru";
 import "react-day-picker/lib/style.css";
 import styled from "styled-components";
-import FlexWrapper from "../common/FlexWrapper";
+import Icon from "../Header/Icons";
+
+const Toggle = styled.div`
+  display: inline-block;
+  margin: 10px 0 10px 20px;
+  width: 40px;
+  height: 24px;
+  background: #bccdd6;
+  border-radius: 100px;
+
+  &::before {
+    content: "";
+    display: block;
+    margin: 2px 0 0 2px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+`;
+
+const Text = styled.span`
+  display: inline-block;
+  margin-left: 10px;
+  transform: translateY(-17px);
+  line-height: 18px;
+  font-size: 12px;
+  color: #4a4a4a;
+`;
+
+const prices = [23456, 24567, 24535, 23456, 27890];
+
+function OverlayComponent({ classNames, children, ...props }) {
+  return (
+    <div className={classNames.overlayWrapper} {...props}>
+      <div className={classNames.overlay}>
+        {children}
+        <Toggle />
+        <Text>Показать цены в одну сторону</Text>
+      </div>
+    </div>
+  );
+}
 
 export default class DateInput extends React.Component {
   constructor(props) {
@@ -37,68 +82,56 @@ export default class DateInput extends React.Component {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
     return (
-      <div className="InputFromTo DateInput">
-        <DayPickerInput
-          value={from}
-          placeholder="Туда"
-          format="LL"
-          formatDate={formatDate}
-          parseDate={parseDate}
-          dayPickerProps={{
-            selectedDays: [from, { from, to }],
-            disabledDays: { after: to },
-            toMonth: to,
-            modifiers,
-            numberOfMonths: 1,
-            onDayClick: () => this.to.getInput().focus()
-          }}
-          onDayChange={this.handleFromChange}
-        />
-        <div className="InputFromTo-to DateInput">
+      <div className="InputFromTo">
+        <div style={{ position: "relative" }}>
           <DayPickerInput
-            ref={el => (this.to = el)}
-            value={to}
-            placeholder="Обратно"
+            overlayComponent={OverlayComponent}
+            placeholder="Туда"
+            value={from}
             format="LL"
             formatDate={formatDate}
             parseDate={parseDate}
             dayPickerProps={{
+              locale: "ru",
+              localeUtils: MomentLocaleUtils,
+              selectedDays: [from, { from, to }],
+              disabledDays: { after: to },
+              toMonth: to,
+              modifiers,
+              numberOfMonths: 1,
+              showOutsideDays: true,
+              onDayClick: () => this.to.getInput().focus()
+            }}
+            onDayChange={this.handleFromChange}
+            hideOnDayClick={false}
+          />
+          <Icon name={this.props.icon} />
+        </div>
+        <div className="InputFromTo-to">
+          <DayPickerInput
+            overlayComponent={OverlayComponent}
+            placeholder="Обратно"
+            ref={el => (this.to = el)}
+            value={to}
+            format="LL"
+            formatDate={formatDate}
+            parseDate={parseDate}
+            dayPickerProps={{
+              locale: "ru",
+              localeUtils: MomentLocaleUtils,
               selectedDays: [from, { from, to }],
               disabledDays: { before: from },
               modifiers,
               month: from,
               fromMonth: from,
-              numberOfMonths: 1
+              numberOfMonths: 1,
+              showOutsideDays: true
             }}
             onDayChange={this.handleToChange}
+            hideOnDayClick={false}
           />
+          <Icon name={this.props.icon} />
         </div>
-        <Helmet>
-          <style>{`
-            .InputFromTo .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-              background-color: #f0f8ff !important;
-              color: #4a90e2;
-            }
-            .InputFromTo .DayPicker-Day {
-              border-radius: 0 !important;
-            }
-            .InputFromTo .DayPicker-Day--start {
-              border-top-left-radius: 50% !important;
-              border-bottom-left-radius: 50% !important;
-            }
-            .InputFromTo .DayPicker-Day--end {
-              border-top-right-radius: 50% !important;
-              border-bottom-right-radius: 50% !important;
-            }
-            .InputFromTo .DayPickerInput-Overlay {
-              width: 385px;
-              margin-top: -55px;
-            }
-            .InputFromTo-to .DayPickerInput-Overlay {
-              margin-left: -195px;
-            }
-          `}</style>
-        </Helmet>
       </div>
     );
   }

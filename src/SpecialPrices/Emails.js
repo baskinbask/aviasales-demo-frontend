@@ -65,6 +65,11 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 7px 5px 7px 13px;
   border: none;
+
+  @media (max-width: 360px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const Btn = styled.button`
@@ -74,6 +79,10 @@ const Btn = styled.button`
   border: none;
   border-radius: 0 2px 2px 0
   background: #ff9241;
+
+    @media (max-width: 360px) {
+    width:100%;
+  }
 `;
 
 class Emails extends React.Component {

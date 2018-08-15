@@ -81,9 +81,9 @@ const Text = styled.p`
   }
 `;
 
-const Card = props => {
+const Card = () => {
   return (
-    <DropDownCard style={{ display: props.visible }} className="dropDownCard">
+    <DropDownCard className="dropDownCard">
       <FlexWrapper jc="space-between" ai="center" mb="16px">
         <Text>Взрослые</Text>
         <Counter />
@@ -109,26 +109,21 @@ const Card = props => {
 class Select extends React.Component {
   constructor() {
     super();
-    this.state = { showCard: "none", icon: false };
+    this.state = { showCard: false, icon: false };
     this.clickHandler = this.clickHandler.bind(this);
   }
 
   clickHandler = () => {
-    const current = this.state.showCard;
-    this.setState({ showCard: !current, icon: !this.state.icon });
+    this.setState({ showCard: !this.state.showCard, icon: !this.state.icon });
   };
 
   render() {
     return (
       <div className="select__wrap">
-        <DropDownField
-          onClick={this.clickHandler}
-          id={this.props.id}
-          className={this.props.className}
-        >
+        <DropDownField id={this.props.id} className={this.props.className}>
           1 пассажир, <span>эконом</span>
           <DropDownIco onClick={this.clickHandler} icon={this.state.icon} />
-          <Card visible={this.state.showCard} />
+          {this.state.showCard && <Card />}
         </DropDownField>
       </div>
     );
