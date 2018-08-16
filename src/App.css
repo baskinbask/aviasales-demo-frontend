@@ -1,28 +1,330 @@
-.App {
+.container {
+  position: relative;
+}
+
+section,
+div,
+p {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*HOME PAGE*/
+
+/*Header*/
+.select__wrap {
+  flex-basis: 19.5%;
+  text-align-last: left;
+}
+
+@media (max-width: 992px) {
+  .select__wrap {
+    flex-basis: 49.7%;
+  }
+  .select__wrap > div {
+    border-radius: 0 0 4px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .select__wrap {
+    flex-basis: 100%;
+  }
+  .select__wrap > div {
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+/*Top-destinations*/
+.top-destinations_cards {
+  margin-top: 60px;
+}
+
+@media (max-width: 576px) {
+  .top-destinations_cards {
+    margin-top: 0;
+  }
+
+  .card-flag {
+    display: none;
+  }
+}
+
+.slider-logo {
+  margin: 0 auto;
+}
+
+/*Slider*/
+.slick-prev:before,
+.slick-next:before {
+  color: #ccc;
+}
+
+@media (max-width: 576px) {
+  .agency-slider {
+    display: none;
+  }
+}
+
+/*Special Prices*/
+@media (max-width: 992px) {
+  .emails-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 678px) {
+  .specPrices__cards {
+    flex-direction: column;
+  }
+}
+
+/*MobApp*/
+.mobApp-wrapper {
+  padding: 65px 0;
+}
+
+@media (max-width: 1200px) {
+  .mobApp-wrapper {
+    padding: 45px 0;
+  }
+}
+
+.mobAppLinks-wrapper {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .mobApp-wrapper {
+    order: -1;
+    padding: 24px 0;
+  }
+  .mobAppLinks-wrapper {
+    flex-direction: column;
+    margin-left: 53%;
+    margin-bottom: 15px;
+  }
+}
+
+/*Footer*/
+@media (max-width: 450px) {
+  .footer_btnWrap {
+    flex-direction: column;
+  }
+}
+
+/*SEARCH-PAGE*/
+.search__header_wrapper {
+  display: flex;
+  padding-top: 80px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 30px;
+}
+
+button.search__header_btn {
+  min-width: 195px;
+  margin-left: 16px;
+  margin-top: 0;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 20px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+button.search__header_btn:hover {
+  box-shadow: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.search__card_flight {
+  margin-bottom: 10px;
+  justify-content: space-between;
 }
 
-.App-title {
-  font-size: 1.5em;
+.search__card_flight + .search__card_flight {
+  border-top: 1px dotted #ddd;
 }
 
-.App-intro {
-  font-size: large;
+@media (max-width: 992px) {
+  .search__header_wrapper {
+    flex-wrap: wrap;
+  }
+
+  button.search__header_btn {
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    flex-basis: 24.8%;
+    font-size: 18px;
+    border-radius: 0 0 4px 0;
+  }
+
+  .search__header_wrapper .select__wrap {
+    max-width: 24.6%;
+  }
+
+  .search__header_wrapper .select__wrap > div {
+    border-radius: 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media (max-width: 768px) {
+  button.search__header_btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+/*Input Dates - DatePicker*/
+.DateInput-wrapper,
+.DayPickerInput {
+  position: relative;
+  margin-right: 2px;
+}
+
+.DayPickerInput input {
+  display: block;
+  width: 100%;
+  padding: 18px 0 18px 10px;
+  flex-basis: 17.5%;
+  box-sizing: border-box;
+  border: none;
+}
+
+.DayPickerInput::placeholder {
+  color: #a0b0b9;
+}
+
+.DayPicker {
+  width: 325px;
+  margin-top: -55px;
+  background: #fff;
+  padding: 0;
+}
+
+.DayPicker-Weekdays {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.DayPicker-NavButton--prev {
+  position: absolute;
+  left: 20px;
+}
+
+.DayPicker-Caption {
+  width: 100%;
+  margin-left: 50px;
+  text-transform: uppercase;
+}
+
+.DayPicker-Caption i {
+  font-size: 12px;
+}
+
+.DayPicker-Day--outside {
+  color: #ddd !important;
+}
+
+.DayPicker-Day--future,
+.DayPicker-Day--past {
+  background: #eee;
+  border-radius: 0 !important;
+}
+
+.InputFromTo .DayPicker-Day--start {
+  color: #4a4a4a !important;
+  background: #eee url(./SearchPage/icons/calendarArrow.svg) 0 0 no-repeat !important;
+  background-size: 100% 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.InputFromTo .DayPicker-Day--end {
+  background: #eee url(./SearchPage/icons/calendarArrowBack.svg) 0 0 no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+.DayPicker-Day--selected {
+  color: #4a4a4a !important;
+  border-radius: 0 !important;
+  background: #eee !important;
+}
+
+/*Header DAte Inputs*/
+.InputFromTo {
+  display: flex;
+  flex-basis: 36%;
+  position: relative;
+}
+
+.InputFromTo > div {
+  flex-basis: 50%;
+  margin-right: 2px;
+  border-radius: 0;
+}
+
+.DayPickerInput {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .InputFromTo {
+    flex-basis: 49.8%;
+  }
+
+  .InputFromTo > div:not(.InputFromTo-to) input {
+    border-radius: 0 0 0 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .InputFromTo {
+    flex-basis: 100%;
+    margin-bottom: 2px;
+  }
+
+  .InputFromTo > div:not(.InputFromTo-to) input {
+    border-radius: 0;
+  }
+}
+
+/*Downshift Input*/
+.downshift-input {
+  position: relative;
+  flex-basis: 22%;
+  margin-right: 2px;
+}
+
+@media (max-width: 1200px) {
+  .downshift-input {
+    flex-basis: 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .downshift-input {
+    flex-basis: 49.5%;
+  }
+
+  .downshift-input input {
+    border-radius: 0 4px 0 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .downshift-input {
+    flex-basis: 100%;
+    margin-bottom: 2px;
+  }
+
+  .downshift-input input {
+    border-radius: 0;
+  }
 }
