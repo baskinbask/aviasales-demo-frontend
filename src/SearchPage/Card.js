@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
-
 import FlightAttrs from "./FlightAttrs";
 import AirLogo from "./AirLogo";
 import carryOn from "./icons/laggageS.svg";
@@ -11,7 +10,7 @@ import plane from "./icons/planeUp.svg";
 import drop from "./icons/drop.svg";
 
 const CardWrap = styled.div`
-  ${"" /* max-width: 718px; */} margin-bottom: 20px;
+  margin-bottom: 20px;
   display: flex;
   border-radius: 4px;
   background: #fff;

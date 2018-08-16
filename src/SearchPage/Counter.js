@@ -29,7 +29,10 @@ const CounterBtn = styled.button`
   background: #fff;
   color: #dbdbdb;
   border: none;
-  border-right: 1px solid #dbdbdb;
+
+  &:not(:last-child) {
+    border-right: 1px solid #dbdbdb;
+  }
 `;
 
 export default class Counter extends React.Component {

@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 const sizes = {
   lg: 992,
   md: 768,

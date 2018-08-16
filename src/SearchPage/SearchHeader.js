@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import DayPickerInput from "react-day-picker/DayPickerInput";
-import "react-day-picker/lib/style.css";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
 import FlexWrapper from "../common/FlexWrapper";
@@ -10,11 +8,11 @@ import Input from "../Header/Input";
 import Select from "../Header/Select";
 import Button from "../Header/Button";
 import back from "./icons/back.svg";
-import DateInput from "./DateInput.1";
+import DateInput from "./DateInput";
 import InputDown from "./InputDownshift";
 
 const WrapperBg = styled.div`
-  ${"" /* min-height: 10vh; */} background: linear-gradient(
+  background: linear-gradient(
     119.26deg,
     #00b0de -25.78%,
     #01aedc -22.1%,
@@ -100,7 +98,6 @@ class SearchHeader extends React.Component {
                 />
                 <InputDown className="downshift-input" />
                 <DateInput icon="calendar" />
-                {/* <DateInput placeholder="Обратно" icon="calendar" /> */}
                 <Select
                   className="search__header_select"
                   id="select"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DayPickerInput from "react-day-picker/DayPickerInput";
+import moment from "moment";
 import MomentLocaleUtils, {
   formatDate,
   parseDate
@@ -51,76 +52,86 @@ function OverlayComponent({ classNames, children, ...props }) {
   );
 }
 
-// function renderDay(day) {
-//   const date = day.getDate();
-//   const dateStyle = {
-//     position: "absolute",
-//     color: "lightgray",
-//     bottom: 0,
-//     right: 0,
-//     fontSize: 20
-//   };
-//   const birthdayStyle = { fontSize: "0.8em", textAlign: "left" };
-//   const cellStyle = {
-//     height: 50,
-//     width: 60,
-//     position: "relative"
-//   };
-//   return (
-//     <div style={cellStyle}>
-//       <div style={dateStyle}>{date}</div>
-//       {prices &&
-//         prices.map((price, i) => (
-//           <div key={i} style={birthdayStyle}>
-//             {price}
-//           </div>
-//         ))}
-//     </div>
-//   );
-// }
-
 export default class DateInput extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDayChange = this.handleDayChange.bind(this);
+    this.handleFromChange = this.handleFromChange.bind(this);
+    this.handleToChange = this.handleToChange.bind(this);
     this.state = {
-      selectedDay: undefined
+      from: undefined,
+      to: undefined
     };
   }
-  handleDayChange(day) {
-    this.setState({ selectedDay: day });
+  showFromMonth() {
+    const { from, to } = this.state;
+    if (!from) {
+      return;
+    }
+    if (moment(to).diff(moment(from), "months") < 2) {
+      this.to.getDayPicker().showMonth(from);
+    }
   }
-
+  handleFromChange(from) {
+    // Change the from date and focus the "to" input field
+    this.setState({ from });
+  }
+  handleToChange(to) {
+    this.setState({ to }, this.showFromMonth);
+  }
   render() {
-    const { selectedDay } = this.state;
-    const future = {
-      after: new Date(selectedDay)
-    };
-    const past = {
-      before: new Date(selectedDay)
-    };
-
+    const { from, to } = this.state;
+    const modifiers = { start: from, end: to };
     return (
-      <div className="DateInput-wrapper">
-        <DayPickerInput
-          overlayComponent={OverlayComponent}
-          placeholder={this.props.placeholder}
-          format="LL"
-          formatDate={formatDate}
-          parseDate={parseDate}
-          onDayChange={this.handleDayChange}
-          dayPickerProps={{
-            locale: "ru",
-            localeUtils: MomentLocaleUtils,
-            modifiers: this.props.future ? { future } : { past },
-            showOutsideDays: true,
-            selectedDays: this.state.selectedDay
-            // renderDay: { renderDay },
-            // canChangeMonth: false
-          }}
-          hideOnDayClick={false}
-        />
-        <Icon name={this.props.icon} />
+      <div className="InputFromTo">
+        <div style={{ position: "relative" }}>
+          <DayPickerInput
+            overlayComponent={OverlayComponent}
+            placeholder="Туда"
+            value={from}
+            format="LL"
+            formatDate={formatDate}
+            parseDate={parseDate}
+            dayPickerProps={{
+              locale: "ru",
+              localeUtils: MomentLocaleUtils,
+              selectedDays: [from, { from, to }],
+              disabledDays: { after: to },
+              toMonth: to,
+              modifiers,
+              numberOfMonths: 1,
+              showOutsideDays: true,
+              onDayClick: () => this.to.getInput().focus()
+            }}
+            onDayChange={this.handleFromChange}
+            hideOnDayClick={false}
+          />
+          <Icon name={this.props.icon} />
+        </div>
+        <div className="InputFromTo-to">
+          <DayPickerInput
+            overlayComponent={OverlayComponent}
+            placeholder="Обратно"
+            ref={el => (this.to = el)}
+            value={to}
+            format="LL"
+            formatDate={formatDate}
+            parseDate={parseDate}
+            dayPickerProps={{
+              locale: "ru",
+              localeUtils: MomentLocaleUtils,
+              selectedDays: [from, { from, to }],
+              disabledDays: { before: from },
+              modifiers,
+              month: from,
+              fromMonth: from,
+              numberOfMonths: 1,
+              showOutsideDays: true
+            }}
+            onDayChange={this.handleToChange}
+            hideOnDayClick={false}
+          />
+          <Icon name={this.props.icon} />
+        </div>
       </div>
     );
   }

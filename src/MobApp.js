@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
-import FlexWrapper from "./common/FlexWrapper";
 
 import iphone from "./common/iphone.png";
 import iphoneMob from "./common/iphoneMob.png";

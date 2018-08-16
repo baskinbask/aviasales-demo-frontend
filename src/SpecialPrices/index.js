@@ -11,6 +11,12 @@ const WrapperBg = styled.div`
   margin-top: 25px;
   padding: 24px 0;
   background: linear-gradient(163.59deg, #00b0de 0%, #196ebd 100%);
+
+  @media (max-width: 768px) {
+    & > div {
+      width: 100%;
+    }
+  }
 `;
 
 const Title = styled.h2`
@@ -57,8 +63,7 @@ class SpecialPrices extends React.Component {
                 <Title>Спецпредложения на авиабилеты</Title>
                 <FlexWrapper className="specPrices__cards" jc="space-between">
                   {cardsSpec.map((item, index) => (
-                    <Card {...item}
-                    />
+                    <Card {...item} />
                   ))}
                 </FlexWrapper>
                 <FlexWrapper jc="space-between" mt="25px" wrap="wrap">

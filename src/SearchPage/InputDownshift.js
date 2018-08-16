@@ -1,34 +1,15 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-// import matchSorter from "match-sorter";
-// import starWarsNames from "starwars-names";
 import Downshift from "downshift";
-
-// import {
-//   Label,
-//   Menu,
-//   ControllerButton,
-//   Input,
-//   Item,
-//   ArrowIcon,
-//   XIcon,
-//   css,
-//   itemToString,
-//   getItems
-// } from "./shared";
 
 const items = [
   { country: "Таиланд", city: "Бангкок", code: "BKK" },
   { country: "Испания", city: "Бараселона", code: "BCN" },
   { country: "Грузия", city: "Батуми", code: "BKK" },
-  { country: "Индонезия", city: "Денпасар Бали", code: "BKK" },
+  { country: "Венгрия", city: "Будапешт", code: "BKK" },
   { country: "Бангладеш", city: "Дакка", code: "BKK" },
   { country: "Россия", city: "Барнаул", code: "BKK" }
 ];
-
-const Wrapper = styled.div`
-  position: relative;
-`;
 
 const InputTag = styled.input`
   width: 100%;

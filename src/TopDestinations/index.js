@@ -4,8 +4,8 @@ import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
 import mainIcon from "./icons/mainIcon.svg";
 import editIcon from "./icons/edit.svg";
-import { catProps } from "./Category";
 import Category from "./Category";
+import { catProps } from "./Category";
 import { cards } from "./cardsArr";
 import Card from "./Card";
 
@@ -64,9 +64,12 @@ class TopDestinations extends React.Component {
                 <img src={mainIcon} alt="" />
               </IconStyled>
               <Title>
-                Популярные направления перелетов<br />из города
+                Популярные направления перелетов
+                <br />
+                из города
                 <a href="#">
-                  &#00; Москва<img src={editIcon} alt="" />
+                  &#00; Москва
+                  <img src={editIcon} alt="" />
                 </a>
               </Title>
             </Col>
@@ -80,7 +83,9 @@ class TopDestinations extends React.Component {
                 jc="space-between"
                 mb="60px"
               >
-                {catProps.map((item, index) => <Category {...item} />)}
+                {catProps.map((item, index) => (
+                  <Category {...item} />
+                ))}
               </FlexWrapper>
             </Col>
           </Row>
@@ -91,7 +96,9 @@ class TopDestinations extends React.Component {
                 d="flex"
                 wrap="wrap"
               >
-                {cards.map((card, index) => <Card {...card} />)}
+                {cards.map((card, index) => (
+                  <Card {...card} />
+                ))}
               </FlexWrapper>
             </Col>
           </Row>

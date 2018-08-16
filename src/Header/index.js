@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
-import FlexWrapper from "../common/FlexWrapper";
 import Logo from "./Logo";
 import Filter from "./Filter";
-import Button from "./Button";
 
 const WrapperBg = styled.div`
   background: linear-gradient(
@@ -66,15 +64,6 @@ const SubTitle = styled.h2`
   }
 `;
 
-const Form = styled.form.attrs({
-  action: "/"
-})`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
 class Header extends React.Component {
   render() {
     return (
@@ -89,7 +78,6 @@ class Header extends React.Component {
               </Col>
               <Col md={10}>
                 <Filter />
-                {/* <Button type="submit" value="Найти билеты" icon="plane" /> */}
               </Col>
             </Row>
           </Content>

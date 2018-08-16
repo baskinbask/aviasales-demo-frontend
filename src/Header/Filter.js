@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-// import DayPickerInput from "react-day-picker/DayPickerInput";
-
 import FlexWrapper from "../common/FlexWrapper";
 import Input from "./Input";
-import DateInput from "../SearchPage/DateInput.1";
+import InputDown from "../SearchPage/InputDownshift";
+import DateInput from "../SearchPage/DateInput";
 import Select from "./Select";
 import Button from "./Button";
 
@@ -32,10 +31,8 @@ class Filter extends Component {
           city="mow"
           value="Москва"
         />
-        <Input id="arrival" type="text" placeholder="Город прибытия" />
+        <InputDown className="downshift-input" />
         <DateInput icon="calendar" />
-        {/* <DateInput placeholder="Туда" icon="calendar" future />
-        <DateInput placeholder="Обратно" icon="calendar" /> */}
         <Select id="select" />
         <ButtonLink to="/search">
           <Button type="submit" value="Найти билеты" icon="plane" />

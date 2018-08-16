@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { listFrom } from "../common/listFrom";
 
 const ListWrap = styled.ul`
   margin-top: 24px;

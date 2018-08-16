@@ -3,7 +3,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
 import mainIcon from "./mainIcon.svg";
-import TravelPoint, { GeoWrap } from "../TopDestinations/TravelPoint";
+import TravelPoint from "../TopDestinations/TravelPoint";
 import List from "./List";
 import { listFrom } from "./listFrom";
 
@@ -140,8 +140,9 @@ class TopPrices extends React.Component {
             <Col lg={8} md={10} xs={12}>
               <Desc>
                 Мы знаем, где купить авиабилеты дешево. Билеты на самолет в 220
-                стран мира.<br /> Поиск и сравнение цен на авиабилеты среди 100
-                агентств и 728 авиакомпаний.
+                стран мира.
+                <br /> Поиск и сравнение цен на авиабилеты среди 100 агентств и
+                728 авиакомпаний.
               </Desc>
               <Privacy>
                 Цены, найденные пользователями за последние 48 часов, не

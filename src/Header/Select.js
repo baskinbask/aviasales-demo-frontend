@@ -5,10 +5,6 @@ import { Label, Input } from "../SearchPage/FilterAirlines";
 import drop from "../SearchPage/icons/dropBlack.svg";
 import Counter from "../SearchPage/Counter";
 
-// const LabelTag = styled.label`
-//   position: relative;
-// `;
-
 const DropDownField = styled.div`
   position: relative;
   flex: 1;
@@ -60,7 +56,8 @@ const DropDownCard = styled.div`
   top: 55px;
   left: 0;
   z-index: 10;
-  width: 211px;
+  width: 100%;
+  min-width: 180px;
   padding: 16px;
   padding-bottom: 0;
   font-size: 14px;
@@ -100,8 +97,8 @@ const Card = () => {
         <Counter />
       </FlexWrapper>
       <hr />
-      <Input type="checkbox" hidden />
-      <Label>Бизнес класс</Label>
+      <Input id="biz" type="checkbox" hidden />
+      <Label htmlFor="biz">Бизнес класс</Label>
     </DropDownCard>
   );
 };

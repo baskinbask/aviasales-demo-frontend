@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 
 import ruFlag from "./flags/flag_ru.png";
 import esFlag from "./flags/flag_es.png";

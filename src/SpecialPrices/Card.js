@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import FlexWrapper from "../common/FlexWrapper";
-// import headerIcon from "./icons/headerIcon.png";
 
 const CardWrapper = styled.div`
   display: flex;
@@ -18,7 +17,7 @@ const CardWrapper = styled.div`
     max-width: 245px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 678px) {
     max-width: 100%;
 
     &:not(:last-child) {

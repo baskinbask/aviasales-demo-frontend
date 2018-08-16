@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import MediaQuery from "react-responsive";
-// import FlexWrapper from "../common/FlexWrapper";
 import SearchHeader from "./SearchHeader";
 import Filter from "./Filter";
 import Card from "./Card";
@@ -17,11 +16,7 @@ const Content = styled.section`
   background: #eaeaea;
 
   @media (max-width: 768px) {
-    padding-top: 0;
-  }
-
-  @media (max-width: 768px) {
-    padding-bottom: 0;
+    padding: 0;
   }
 `;
 

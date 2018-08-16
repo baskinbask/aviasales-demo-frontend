@@ -67,7 +67,6 @@ const Input = styled.input`
   border: none;
 
   @media (max-width: 360px) {
-    width: 100%;
     text-align: center;
   }
 `;
